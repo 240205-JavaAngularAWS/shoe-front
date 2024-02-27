@@ -6,11 +6,11 @@ import { SellerLoginComponent } from './components/seller-login/seller-login.com
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
 
 const routes: Routes = [
-  {path: 'loginUser', component: UserLoginComponent},
-  {path: 'createAccount', component: UserRegisterComponent},
-  {path: 'loginSeller', component: SellerLoginComponent},
-  {path: 'createAccountSeller', component: SellerRegisterComponent},
-  {path: '', pathMatch: 'full', redirectTo:'loginUser'}
+  { path: 'loginUser', component: UserLoginComponent },
+  { path: 'createAccount', component: UserRegisterComponent },
+  { path: 'loginSeller', component: SellerLoginComponent },
+  { path: 'createAccountSeller', component: SellerRegisterComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'loginUser' },
 ];
 
 @NgModule({
