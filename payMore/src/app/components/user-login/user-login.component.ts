@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'user-login',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class UserLoginComponent {
 
+  toSellerLogin(){
+    this.router.navigate(['loginSeller'])
+  }
+
+  constructor(private router: Router){
+
+  }
 }
