@@ -1,1 +1,13 @@
-<p>user-login works!</p>
+<div id="loginForm">
+    <label for="username">Username: </label>
+    <input type="text" id="username" name="username" >
+
+    <br>
+
+
+    <label for="password">Password: </label>
+    <input type="text" id="password" name="password" >
+
+    <button id="loginButton">Login</button>
+    <p id="errorMessage" style="color: red;" [hidden]="errorMessageHidden">Username/Password Incorrect!</p>
+</div>
