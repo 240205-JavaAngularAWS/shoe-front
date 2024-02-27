@@ -9,9 +9,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserNavComponent } from './components/user-nav/user-nav.component';
 import { SellerNavComponent } from './components/seller-nav/seller-nav.component';
 import { SellerLoginComponent } from './components/seller-login/seller-login.component';
-
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
 import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component'
     SellerNavComponent,
     SellerLoginComponent,
     SellerRegisterComponent,
-    NavBarSLComponent
+    NavBarSLComponent,
+    UserRegisterComponent
 
   ],
   imports: [
