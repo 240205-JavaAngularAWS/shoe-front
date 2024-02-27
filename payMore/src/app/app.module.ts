@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserNavComponent } from './components/user-nav/user-nav.component';
 import { SellerNavComponent } from './components/seller-nav/seller-nav.component';
+import { SellerLoginComponent } from './components/seller-login/seller-login.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SellerNavComponent } from './components/seller-nav/seller-nav.component
     UserLoginComponent,
     NavBarComponent,
     UserNavComponent,
-    SellerNavComponent
+    SellerNavComponent,
+    SellerLoginComponent
   ],
   imports: [
     BrowserModule,
