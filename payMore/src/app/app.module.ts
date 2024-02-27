@@ -11,6 +11,7 @@ import { SellerNavComponent } from './components/seller-nav/seller-nav.component
 import { SellerLoginComponent } from './components/seller-login/seller-login.component';
 
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
+import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SellerRegisterComponent } from './components/seller-register/seller-reg
     UserNavComponent,
     SellerNavComponent,
     SellerLoginComponent,
-    SellerRegisterComponent
+    SellerRegisterComponent,
+    NavBarSLComponent
 
   ],
   imports: [
