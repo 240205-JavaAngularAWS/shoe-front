@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrl: './user-register.component.css',
 })
 export class UserRegisterComponent {
-  toSellerLogin() {
-    this.router.navigate(['loginSeller']);
+  toSellerRegister() {
+    this.router.navigate(['createAccountSeller']);
   }
 
   constructor(private router: Router) {}

@@ -1,9 +1,7 @@
 <div>
-
   <app-nav-bar></app-nav-bar>
 
   <div id="registerForm">
-    <p>Register Buyer</p>
     <label for="firstName">First Name: </label>
     <input type="text" id="firstName" name="firstName" />
 
@@ -33,7 +31,7 @@
     <input type="text" id="password" name="password" />
 
     <button id="registerButton">Register</button>
-
+    <br>
+        <p>Not a buyer? Register as Seller <a style="color: blue; cursor: pointer;" (click)="toSellerRegister()">Here.</a> </p>
   </div>
-
 </div>
