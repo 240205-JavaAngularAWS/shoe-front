@@ -25,7 +25,6 @@ import { UserRegisterComponent } from './components/user-register/user-register.
     SellerRegisterComponent,
     NavBarSLComponent,
     UserRegisterComponent
-
   ],
   imports: [
     BrowserModule,
