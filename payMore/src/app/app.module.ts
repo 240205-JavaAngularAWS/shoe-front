@@ -10,6 +10,8 @@ import { UserNavComponent } from './components/user-nav/user-nav.component';
 import { SellerNavComponent } from './components/seller-nav/seller-nav.component';
 import { SellerLoginComponent } from './components/seller-login/seller-login.component';
 
+import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SellerLoginComponent } from './components/seller-login/seller-login.com
     NavBarComponent,
     UserNavComponent,
     SellerNavComponent,
-    SellerLoginComponent
+    SellerLoginComponent,
+    SellerRegisterComponent
+
   ],
   imports: [
     BrowserModule,
