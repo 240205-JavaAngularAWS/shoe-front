@@ -1,14 +1,20 @@
-<div id="loginForm">
-    <label for="username">Username: </label>
-    <input type="text" id="username" name="username" >
+<div>
 
-    <br>
+    <app-nav-bar></app-nav-bar>
+
+    <div id="loginForm">
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username" >
+
+        <br>
 
 
-    <label for="password">Password: </label>
-    <input type="text" id="password" name="password" >
+        <label for="password">Password: </label>
+        <input type="text" id="password" name="password" >
 
-    <button id="loginButton">Login</button>
-    <br>
-    <p>Not a buyer? Log In as Seller <a style="color: blue; cursor: pointer;" (click)="toSellerLogin()">Here.</a> </p>
+        <button id="loginButton">Login</button>
+        <br>
+        <p>Not a buyer? Log In as Seller <a style="color: blue; cursor: pointer;" (click)="toSellerLogin()">Here.</a> </p>
+    </div>
+
 </div>
