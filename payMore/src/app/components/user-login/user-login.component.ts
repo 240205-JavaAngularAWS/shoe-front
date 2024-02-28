@@ -11,6 +11,35 @@ export class UserLoginComponent {
 
   usernameInput: string = ""
   passwordInput: string = ""
+  errorMessageHidden: boolean = true   
+  loginUser() {
+    // console.log("Login Attempted!");
+    // console.log(this.usernameInput);
+    // console.log(this.passwordInput);
+
+    this.authService.loginUser(this.usernameInput, this.passwordInput);
+    let successfulLogin: boolean = this.authService.validateLoggedIn();
+    if(successfulLogin) {
+      console.log("Successful Login!");
+      this.errorMessageHidden = true;
+    } else {
+      console.log("Unable to verify. Please try again.");
+      this.errorMessageHidden = false;
+    }
+  }
+  toSellerLogin(){
+    this.router.navigate(['loginSeller'])
+  }
+
+  constructor(private router: Router, private authService: AuthService){
+
+  }
+}
+
+
+
+
+
   // loginUser(){
   //   this.authService.loginUser(this.usernameInput, this.passwordInput).subscribe((data) => {
   //     sessionStorage.setItem("username", data.username)
@@ -25,12 +54,3 @@ export class UserLoginComponent {
   //   })
 
   // }
-
-  toSellerLogin(){
-    this.router.navigate(['loginSeller'])
-  }
-
-  constructor(private router: Router, private authService: AuthService){
-
-  }
-}

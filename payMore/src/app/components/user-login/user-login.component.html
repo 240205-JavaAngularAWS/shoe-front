@@ -4,15 +4,16 @@
 
     <div id="loginForm">
         <label for="username">Username: </label>
-        <input type="text" id="username" name="username" >
+        <input type="text" id="username" name="username" [(ngModel)]="usernameInput">
 
         <br>
 
 
         <label for="password">Password: </label>
-        <input type="text" id="password" name="password" >
+        <input type="text" id="password" name="password" [(ngModel)]="passwordInput">
 
-        <button id="loginButton">Login</button>
+        <button id="loginButton" (click)="loginUser()">Login</button>
+        <p id="errorMessage" style="color: red;"[hidden]="errorMessageHidden" >Username/Password Incorrect!</p>
         <br>
         <p>Not a buyer? Log In as Seller <a style="color: blue; cursor: pointer;" (click)="toSellerLogin()">Here.</a> </p>
     </div>
