@@ -12,6 +12,7 @@ import { SellerLoginComponent } from './components/seller-login/seller-login.com
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
 import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { UserRegisterComponent } from './components/user-register/user-register.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
