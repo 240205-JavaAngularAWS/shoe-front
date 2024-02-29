@@ -13,6 +13,7 @@ import { SellerRegisterComponent } from './components/seller-register/seller-reg
 import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { FormsModule } from '@angular/forms';
+import { WriteReviewComponent } from './components/write-review/write-review.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     SellerLoginComponent,
     SellerRegisterComponent,
     NavBarSLComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    WriteReviewComponent
   ],
   imports: [
     BrowserModule,
