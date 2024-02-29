@@ -10,7 +10,7 @@
         </div>
         <div class="form-group">
             <label for="rating">Rating:</label>
-            <ngb-rating [(rate)]="rating" />
+            <ngb-rating [max]="5" [(rate)]="rating" />
             <hr />
             <pre>Rate: <b>{{ rating }}</b></pre>
         </div>
