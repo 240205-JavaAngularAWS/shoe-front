@@ -5,6 +5,7 @@ import { UserRegisterComponent } from './components/user-register/user-register.
 import { SellerLoginComponent } from './components/seller-login/seller-login.component';
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
 import { WriteReviewComponent } from './components/write-review/write-review.component';
+import { ReviewListComponent } from './components/review-list/review-list.component';
 
 const routes: Routes = [
   { path: 'loginUser', component: UserLoginComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'loginSeller', component: SellerLoginComponent },
   { path: 'createAccountSeller', component: SellerRegisterComponent },
   { path: 'writeReview', component: WriteReviewComponent},
+  { path: 'reviewList', component: ReviewListComponent},
   { path: '', pathMatch: 'full', redirectTo: 'loginUser' },
 ];
 

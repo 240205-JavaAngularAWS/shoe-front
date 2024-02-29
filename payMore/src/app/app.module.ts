@@ -14,6 +14,7 @@ import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component'
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { FormsModule } from '@angular/forms';
 import { WriteReviewComponent } from './components/write-review/write-review.component';
+import { ReviewListComponent } from './components/review-list/review-list.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { WriteReviewComponent } from './components/write-review/write-review.com
     SellerRegisterComponent,
     NavBarSLComponent,
     UserRegisterComponent,
+    ReviewListComponent,
     // WriteReviewComponent
   ],
   imports: [
