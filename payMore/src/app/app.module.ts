@@ -27,7 +27,7 @@ import { WriteReviewComponent } from './components/write-review/write-review.com
     SellerRegisterComponent,
     NavBarSLComponent,
     UserRegisterComponent,
-    WriteReviewComponent
+    // WriteReviewComponent
   ],
   imports: [
     BrowserModule,
