@@ -1,18 +1,20 @@
 <div>
 
     <app-nav-bar-sl></app-nav-bar-sl>
-
-    <div id="sellerLoginForm">
+    <p style="text-align: center; font-size: 30px; font-weight: bold;">Seller Login</p>
+    <div id="loginForm">
         <label for="username">Username: </label>
-        <input type="text" id="userName" name="username">
+        <input type="text" id="userName" name="username" [(ngModel)]="usernameInput">
 
         <br>
 
         <label for="password">Password: </label>
-        <input type="text" id="password" name="password" >
+        <input type="text" id="password" name="password" [(ngModel)]="passwordInput">
 
-        <button id="loginButton">Seller Login</button>
-
+        <button id="loginButton" (click)="loginUser()">Seller Login</button>
+        <br>
+        <p id="errorMessage" style="color: red;"[hidden]="errorMessageHidden" >Username/Password Incorrect!</p>
+        <p>Not a seller? Log In as Buyer <a style="color: blue; cursor: pointer;" (click)="toBuyerLogin()">Here.</a> </p>
     </div>
 
 </div>
