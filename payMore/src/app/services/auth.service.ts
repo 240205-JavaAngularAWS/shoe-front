@@ -1,41 +1,79 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SUser } from '../interfaces/SUser'; 
+import { IRegisterUser } from '../interfaces/IRegisterUser'; 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
   users: SUser[] = [
     {
-      username: "eric",
-      password: "password"
+      username: 'eric',
+      password: 'password',
     },
     {
-      username: "user1",
-      password: "password"
+      username: 'user1',
+      password: 'password',
     },
     {
-      username: "user2",
-      password: "password"
+      username: 'user2',
+      password: 'password',
     },
-  ]
-  loginUser(username: string, password: string){
-
+  ];
+  loginUser(username: string, password: string) {
     sessionStorage.removeItem('username');
-    for(let user of this.users) {
-      if(user.username == username && user.password == password) {
-        sessionStorage.setItem("username", username);
+    for (let user of this.users) {
+      if (user.username == username && user.password == password) {
+        sessionStorage.setItem('username', username);
       }
     }
   }
   validateLoggedIn(): boolean {
-    return (!! sessionStorage.getItem('username'))
+    return !!sessionStorage.getItem('username');
   }
 
+  registerUsers: IRegisterUser[] = [
+    {
+      firstName: 'matt',
+      lastName: 'flug',
+      userName: 'matty',
+      password: 'password',
+      email: 'm@gmail',
+      address: 'home',
+      orders: 'gameboy',
+    },
+    {
+      firstName: 'matt1',
+      lastName: 'flug1',
+      userName: 'matty1',
+      password: 'password1',
+      email: 'm1@gmail',
+      address: 'home1',
+      orders: 'gameboy1',
+    },
+    {
+      firstName: 'matt2',
+      lastName: 'flug2',
+      userName: 'matty2',
+      password: 'password2',
+      email: 'm2@gmail',
+      address: 'home2',
+      orders: 'gameboy2',
+    },
+  ];
+  userRegister(username: string, password: string) {
+    sessionStorage.removeItem('username');
+    for (let user of this.users) {
+      if (user.username == username && user.password == password) {
+        sessionStorage.setItem('username', username);
+      }
+    }
+  }
+  validateRegisterUser(): boolean {
+    return !!sessionStorage.getItem('username');
+  }
 
-
-  constructor() { }
+  constructor() {}
 }
 
 
