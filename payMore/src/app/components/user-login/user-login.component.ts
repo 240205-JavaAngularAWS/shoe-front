@@ -22,6 +22,7 @@ export class UserLoginComponent {
     if(successfulLogin) {
       console.log("Successful Login!");
       this.errorMessageHidden = true;
+      this.router.navigate(['userPortal']);
     } else {
       console.log("Unable to verify. Please try again.");
       this.errorMessageHidden = false;
