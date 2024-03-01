@@ -1,22 +1,20 @@
-import { Component, input } from '@angular/core';
+import { Component, NgModule, input } from '@angular/core';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { reviews } from '../../interfaces/reviewsInterface';
+import { WriteReviewComponent } from '../write-review/write-review.component';
 
 @Component({
   selector: 'app-review-list',
   templateUrl: './review-list.component.html',
   styleUrl: './review-list.component.css'
 })
+
+// @NgModule({
+//   imports: [WriteReviewComponent],
+// })
+
 export class ReviewListComponent {
 
-  // @input() reviewInputted: reviews = {
-  //   id: 0,
-  //   product: {
-  //       id: 0
-  //   },
-  //   content: "",
-  //   rating: 0
-  // }
 
   reviews: reviews[] = [
     {
