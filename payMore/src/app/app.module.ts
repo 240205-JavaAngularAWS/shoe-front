@@ -35,6 +35,7 @@ import { ReviewComponent } from './components/review/review.component';
     UserPortalComponent,
     ViewProductsComponent,
     ReviewComponent,
+    ReviewListComponent
     // WriteReviewComponent
   ],
   imports: [

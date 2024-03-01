@@ -19,4 +19,8 @@ export class ReviewComponent {
 
   @Output() viewReview = new EventEmitter();
 
+  viewTodo(){
+    console.log("attempting to view item with ID: " + this.reviewInputted.id);
+    this.viewReview.emit(this.reviewInputted);
+  }
 }

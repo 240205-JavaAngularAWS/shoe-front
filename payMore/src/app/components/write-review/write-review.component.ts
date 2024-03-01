@@ -6,7 +6,7 @@ import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-write-review',
+  selector: 'writeReview',
   standalone: true,
   templateUrl: './write-review.component.html',
   imports: [NgbRatingModule, FormsModule],

@@ -60,4 +60,8 @@ export class ReviewListComponent {
     }
   ]
 
+  viewReview($event: reviews){
+    console.log($event.id);
+  }
+
 }
