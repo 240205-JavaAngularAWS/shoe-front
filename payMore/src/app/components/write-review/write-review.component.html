@@ -6,7 +6,7 @@
     <form class="">
         <div class="form-group">
             <label for="reviewProduct">Review: </label>
-            <textarea class="form-control" id="review" rows="10"></textarea>
+            <textarea class="form-control" id="review" rows="10" [(ngModel)]="review">{{ review }}</textarea>
         </div>
         <div class="form-group">
             <label for="rating">Rating:</label>
@@ -14,7 +14,8 @@
             <hr />
             <pre>Rate: <b>{{ rating }}</b></pre>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <p id="errorMessage" style="color: red;"[hidden]="errorMessageHidden" >Please write a review!</p>
+        <button type="submit" class="btn btn-primary" (click)="toReviewList()">Submit</button>
     </form>
 
 </div>
