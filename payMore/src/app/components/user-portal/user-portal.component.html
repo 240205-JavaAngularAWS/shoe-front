@@ -1,5 +1,10 @@
-
 <div>
-    <p>Products</p>
+    <app-nav-bar></app-nav-bar>
+<div>
+    <p style="text-align: center; font-weight: bolder; font-size: 50px;">Products</p>
+    <label for="search" style="margin-left: 400px; font-weight: bold;">Search Shoes: </label>
+    <input type="text" placeholder="Filter" style="margin-left: 10px;" #filter>
+    <button type="button" id="searchButton" style="margin-left: 5px;" (click)="searchShoes(filter.value)">Search</button>
 <view-products *ngFor="let product of products" [productsInputted]="product"></view-products>
+</div>
 </div>
