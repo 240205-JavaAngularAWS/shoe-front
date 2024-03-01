@@ -17,6 +17,7 @@ import { WriteReviewComponent } from './components/write-review/write-review.com
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { ReviewComponent } from './components/review/review.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ViewProductsComponent } from './components/view-products/view-products.
     ReviewListComponent,
     UserPortalComponent,
     ViewProductsComponent,
+    ReviewComponent,
     // WriteReviewComponent
   ],
   imports: [
