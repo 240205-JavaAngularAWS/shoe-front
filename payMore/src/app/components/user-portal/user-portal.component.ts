@@ -9,12 +9,24 @@ import { Products } from '../../interfaces/products';
 })
 export class UserPortalComponent {
 
+
+searchShoesResult: Products[] = []
+  searchShoes(results: string) {
+    if(!results) {
+      this.searchShoesResult = this.products;
+      return;
+    } 
+    this.searchShoesResult = this.products.filter(searchShoes => {
+      searchShoes?.gender.toLowerCase().includes(results.toLowerCase())
+    })
+  }
+
   products: Products[] = []
   constructor(private productsService: ProductsService) {
-
   }
 
   ngOnInit() {
     this.products = this.productsService.getAllProducts();
+    this.searchShoesResult = this.products
   }
 }
