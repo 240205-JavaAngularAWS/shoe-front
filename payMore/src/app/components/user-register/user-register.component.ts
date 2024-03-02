@@ -3,19 +3,27 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-user-register',
+  selector: 'user-register',
   templateUrl: './user-register.component.html',
   styleUrl: './user-register.component.css',
 })
 export class UserRegisterComponent {
-  usernameInput: string = '';
-  passwordInput: string = '';
+  firstNameRegisterInput: string = '';
+  lastNameRegisterInput: string = '';
+  userNameRegisterInput: string = '';
+  passwordRegisterInput: string = '';
+  emailRegisterInput: string = '';
   errorMessageHidden: boolean = true;
-  RegisterUser() {
-
-    this.authService.userRegister(this.usernameInput, this.passwordInput);
-    let successfulLogin: boolean = this.authService.validateLoggedIn();
-    if (successfulLogin) {
+  registerUser() {
+    this.authService.userRegister(
+      this.firstNameRegisterInput,
+      this.lastNameRegisterInput,
+      this.userNameRegisterInput,
+      this.passwordRegisterInput,
+      this.emailRegisterInput
+    );
+    let successfulRegister: boolean = this.authService.validateRegisterUser();
+    if (successfulRegister) {
       console.log('Successful Register!');
       this.errorMessageHidden = true;
     } else {

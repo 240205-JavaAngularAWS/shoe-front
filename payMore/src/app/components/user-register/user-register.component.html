@@ -3,21 +3,21 @@
 <p style="text-align: center; font-size: 30px; font-weight: bold;">User Register</p>
   <div id="registerForm">
     <label for="firstName">First Name: </label>
-    <input type="text" id="firstName" name="firstName" />
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="firstNameRegisterInput"/>
 
     <label for="lastName">Last Name: </label>
-    <input type="text" id="lastName" name="lastName" />
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="lastNameRegisterInput"/>
 
     <label for="username">Username: </label>
-    <input type="text" id="username" name="username" />
+    <input type="text" id="username" name="username" [(ngModel)]="userNameRegisterInput"/>
+    
+        <label for="password">Password: </label>
+        <input type="text" id="password" name="password" [(ngModel)]="passwordRegisterInput"/>
 
     <label for="email">Email: </label>
-    <input type="text" id="email" name="email" />
+    <input type="text" id="email" name="email" [(ngModel)]="emailRegisterInput"/>
 
-    <label for="password">Password: </label>
-    <input type="text" id="password" name="password" />
-
-    <button id="registerButton">Register</button>
+    <button id="registerButton" (click)="registerUser()">Register</button>
     <br />
     <p>
       Not a buyer? Register as Seller

@@ -56,16 +56,22 @@ export class AuthService {
       email: 'm2@gmail',
     },
   ];
-  userRegister(username: string, password: string) {
-    sessionStorage.removeItem('username');
-    for (let user of this.users) {
-      if (user.username == username && user.password == password) {
-        sessionStorage.setItem('username', username);
+  userRegister(firstName: string, lastName: string, userName: string, password: string, email: string) {
+    sessionStorage.removeItem('userName');
+    for (let registerUser of this.registerUsers) {
+      if (
+        registerUser.firstName == firstName &&
+        registerUser.lastName == lastName &&
+        registerUser.userName == userName &&
+        registerUser.password == password &&
+        registerUser.email == email
+      ) {
+        sessionStorage.setItem('userName', userName);
       }
     }
   }
   validateRegisterUser(): boolean {
-    return !!sessionStorage.getItem('username');
+    return !!sessionStorage.getItem('userName');
   }
 
   constructor() {}
