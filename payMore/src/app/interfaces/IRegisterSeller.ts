@@ -1,10 +1,9 @@
 export interface IRegisterSeller {
   id?: number;
   companyName: string;
-  email: string;
   userName: string;
   password: string;
-  products: any;
+  email: string;
   address: any;
   city: string;
   state: string;

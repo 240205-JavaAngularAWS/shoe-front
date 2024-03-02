@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SUser } from '../interfaces/SUser'; 
 import { IRegisterUser } from '../interfaces/IRegisterUser'; 
+import { IRegisterSeller } from '../interfaces/IRegisterSeller';
 @Injectable({
   providedIn: 'root',
 })
@@ -31,7 +32,7 @@ export class AuthService {
   validateLoggedIn(): boolean {
     return !!sessionStorage.getItem('username');
   }
-
+  // Register Users
   registerUsers: IRegisterUser[] = [
     {
       firstName: 'matt',
@@ -46,7 +47,6 @@ export class AuthService {
       userName: 'matty1',
       password: 'password1',
       email: 'm1@gmail',
-
     },
     {
       firstName: 'matt2',
@@ -56,7 +56,13 @@ export class AuthService {
       email: 'm2@gmail',
     },
   ];
-  userRegister(firstName: string, lastName: string, userName: string, password: string, email: string) {
+  userRegister(
+    firstName: string,
+    lastName: string,
+    userName: string,
+    password: string,
+    email: string
+  ) {
     sessionStorage.removeItem('userName');
     for (let registerUser of this.registerUsers) {
       if (
@@ -71,6 +77,68 @@ export class AuthService {
     }
   }
   validateRegisterUser(): boolean {
+    return !!sessionStorage.getItem('userName');
+  }
+  // Register Sellers
+  registerSellers: IRegisterSeller[] = [
+    {
+      companyName: 'company',
+      userName: 'company',
+      password: 'password',
+      email: 'company@gmail',
+      address: '100 Pearl St.',
+      city: 'denver',
+      state: 'co',
+      zipCode: '80209',
+    },
+    {
+      companyName: 'company1',
+      userName: 'company1',
+      password: 'password1',
+      email: 'company1@gmail',
+      address: '101 Pearl St.',
+      city: 'denver',
+      state: 'co',
+      zipCode: '80209',
+    },
+    {
+      companyName: 'company2',
+      userName: 'company2',
+      password: 'password2',
+      email: 'company2@gmail',
+      address: '102 Pearl St.',
+      city: 'denver',
+      state: 'co',
+      zipCode: '80209',
+    },
+  ];
+  sellerRegister(
+  companyName: string,
+  userName: string,
+  password: string,
+  email: string,
+  address: any,
+  city: string,
+  state: string,
+  zipCode: string
+  ) {
+    sessionStorage.removeItem('userName');
+    for (let registerSeller of this.registerSellers) {
+      if (
+        registerSeller.companyName == companyName &&
+        registerSeller.userName == userName &&
+        registerSeller.password == password &&
+        registerSeller.email == email &&
+        registerSeller.address == address &&
+        registerSeller.city == city &&
+        registerSeller.state == state &&
+        registerSeller.zipCode == zipCode
+      ) {
+        sessionStorage.setItem('userName', userName);
+      }
+    }
+  }
+  validateRegisterSeller(): boolean {
     return !!sessionStorage.getItem('userName');
   }
 
