@@ -39,8 +39,6 @@ export class AuthService {
       userName: 'matty',
       password: 'password',
       email: 'm@gmail',
-      address: 'home',
-      orders: 'gameboy',
     },
     {
       firstName: 'matt1',
@@ -48,8 +46,7 @@ export class AuthService {
       userName: 'matty1',
       password: 'password1',
       email: 'm1@gmail',
-      address: 'home1',
-      orders: 'gameboy1',
+
     },
     {
       firstName: 'matt2',
@@ -57,8 +54,6 @@ export class AuthService {
       userName: 'matty2',
       password: 'password2',
       email: 'm2@gmail',
-      address: 'home2',
-      orders: 'gameboy2',
     },
   ];
   userRegister(username: string, password: string) {

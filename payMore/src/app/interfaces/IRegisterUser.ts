@@ -5,6 +5,4 @@ export interface IRegisterUser {
   userName: string;
   password: string;
   email: string;
-  address: string;
-  orders: any;
 }
