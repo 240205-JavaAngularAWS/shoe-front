@@ -28,6 +28,12 @@
     <label for="zipCode">ZipCode: </label>
     <input type="text" id="zipCode" name="zipCode" />
 
-    <button id="registerButton">Register</button>
+    <button id="registerButton" (click)="registerSeller()">Register</button>
+        <br />
+    <p>
+      Not a seller? Register as User
+      <a style="color: blue; cursor: pointer" (click)="toUserRegister()"
+        >Here.</a
+      >
   </div>
 </div>
