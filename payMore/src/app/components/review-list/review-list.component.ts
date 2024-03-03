@@ -6,6 +6,7 @@ import { WriteReviewComponent } from '../write-review/write-review.component';
 @Component({
   selector: 'app-review-list',
   templateUrl: './review-list.component.html',
+  // imports: [WriteReviewComponent],
   styleUrl: './review-list.component.css'
 })
 

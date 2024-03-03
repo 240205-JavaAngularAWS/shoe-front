@@ -9,16 +9,19 @@ import { ReviewListComponent } from './components/review-list/review-list.compon
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
 import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
 import { SellerPortalComponent } from './components/seller-portal/seller-portal.component';
-
+import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 const routes: Routes = [
   { path: 'loginUser', component: UserLoginComponent },
   { path: 'createAccount', component: UserRegisterComponent },
   { path: 'loginSeller', component: SellerLoginComponent },
   { path: 'createAccountSeller', component: SellerRegisterComponent },
-  { path: 'writeReview', component: WriteReviewComponent },
-  { path: 'reviewList', component: ReviewListComponent },
-  { path: 'userPortal', component: UserPortalComponent },
+  { path: 'writeReview', component: WriteReviewComponent},
+  { path: 'reviewList', component: ReviewListComponent},
+  {path: 'userPortal', component: UserPortalComponent},
+  // {path: 'viewProducts', component: ViewProductsComponent},
+  {path: 'productPage', component: ProductPageComponent},
   { path: '', pathMatch: 'full', redirectTo: 'loginUser' },
   { path: 'list', component: SellerCategoriesComponent },
   { path: 'lists', component: SellerPortalComponent },

@@ -22,6 +22,7 @@ import { SellerPortalComponent } from './components/seller-portal/seller-portal.
 import { SellerProductComponent } from './components/seller-product/seller-product.component';
 import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
 import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { SellerIconComponent } from './components/seller-icon/seller-icon.compon
     SellerProductComponent,
     SellerCategoriesComponent,
     SellerIconComponent
+    ProductPageComponent
     // WriteReviewComponent
   ],
   imports: [
