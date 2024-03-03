@@ -7,6 +7,8 @@ import { SellerRegisterComponent } from './components/seller-register/seller-reg
 import { WriteReviewComponent } from './components/write-review/write-review.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
+import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
+import { SellerPortalComponent } from './components/seller-portal/seller-portal.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 
@@ -21,6 +23,8 @@ const routes: Routes = [
   // {path: 'viewProducts', component: ViewProductsComponent},
   {path: 'productPage', component: ProductPageComponent},
   { path: '', pathMatch: 'full', redirectTo: 'loginUser' },
+  { path: 'list', component: SellerCategoriesComponent },
+  { path: 'lists', component: SellerPortalComponent },
 ];
 
 @NgModule({

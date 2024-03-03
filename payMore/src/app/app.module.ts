@@ -18,6 +18,10 @@ import { ReviewListComponent } from './components/review-list/review-list.compon
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ReviewComponent } from './components/review/review.component';
+import { SellerPortalComponent } from './components/seller-portal/seller-portal.component';
+import { SellerProductComponent } from './components/seller-product/seller-product.component';
+import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
+import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 
 
@@ -37,6 +41,10 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     ViewProductsComponent,
     ReviewComponent,
     ReviewListComponent,
+    SellerPortalComponent,
+    SellerProductComponent,
+    SellerCategoriesComponent,
+    SellerIconComponent
     ProductPageComponent
     // WriteReviewComponent
   ],
