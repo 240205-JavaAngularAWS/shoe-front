@@ -7,6 +7,7 @@ import { SellerRegisterComponent } from './components/seller-register/seller-reg
 import { WriteReviewComponent } from './components/write-review/write-review.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
+import { ViewProductsComponent } from './components/view-products/view-products.component';
 
 const routes: Routes = [
   { path: 'loginUser', component: UserLoginComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'writeReview', component: WriteReviewComponent},
   { path: 'reviewList', component: ReviewListComponent},
   {path: 'userPortal', component: UserPortalComponent},
+  // {path: 'viewProducts', component: ViewProductsComponent},
   { path: '', pathMatch: 'full', redirectTo: 'loginUser' },
 ];
 
