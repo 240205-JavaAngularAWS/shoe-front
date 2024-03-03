@@ -8,6 +8,7 @@ import { WriteReviewComponent } from './components/write-review/write-review.com
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 const routes: Routes = [
   { path: 'loginUser', component: UserLoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'reviewList', component: ReviewListComponent},
   {path: 'userPortal', component: UserPortalComponent},
   // {path: 'viewProducts', component: ViewProductsComponent},
+  {path: 'productPage', component: ProductPageComponent},
   { path: '', pathMatch: 'full', redirectTo: 'loginUser' },
 ];
 
