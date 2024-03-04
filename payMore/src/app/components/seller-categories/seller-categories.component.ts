@@ -29,7 +29,16 @@ export class SellerCategoriesComponent {
   hide: boolean = true;
 
   createProduct() {
-    if (!this.newCategory) {
+    if (
+      !this.newPrice &&
+      !this.newColor &&
+      !this.newGender &&
+      !this.newCategory &&
+      !this.newQuantity &&
+      !this.newSeller &&
+      !this.newImage &&
+      !this.newDescription
+    ) {
       // console.log("Text is blank")
       // TODO add in error message
       this.hide = false;
@@ -49,7 +58,15 @@ export class SellerCategoriesComponent {
     };
     this.products.push(newProduct);
 
+    // clear inputs
+    this.newPrice = 0;
+    this.newColor = '';
+    this.newGender = '';
     this.newCategory = '';
+    this.newQuantity = 0;
+    this.newSeller = {};
+     this.newImage = '';
+     this.newDescription = '';
     this.hide = true;
   }
 
