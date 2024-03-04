@@ -1,7 +1,6 @@
 
 <div id="reviewContainer" *ngIf="reviews.length > 0; else elseBlock">
 
-    <p>review-list works!</p>
     <div>
         <review *ngFor="let review of reviews" [reviewInputted]="review" (viewReview)="viewReview($event)" ></review>
     </div>
