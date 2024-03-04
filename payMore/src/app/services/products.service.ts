@@ -61,15 +61,23 @@ getAllProducts(): Products[]{
 }
 
 
-getProductById(productId: number): Products[]{
+getProductById(productId: number): Products{
   
   for (let product of this.products){
     if(product.id == productId){
-      return this.products;
+      return product;
     }
   }
 
-  return [];
+  return {
+    price: 0,
+    color: undefined,
+    gender: undefined,
+    category: undefined,
+    quantity: 0,
+    seller: {},
+    imageUrl: ''
+  };
 }
 
   constructor() { }

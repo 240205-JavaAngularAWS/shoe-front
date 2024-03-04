@@ -7,9 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'writeReview',
-  standalone: true,
   templateUrl: './write-review.component.html',
-  imports: [NgbRatingModule, FormsModule],
   styleUrl: './write-review.component.css'
 })
 export class WriteReviewComponent {

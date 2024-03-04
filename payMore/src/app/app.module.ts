@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbRating, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserNavComponent } from './components/user-nav/user-nav.component';
 import { SellerNavComponent } from './components/seller-nav/seller-nav.component';
@@ -45,13 +45,14 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     SellerProductComponent,
     SellerCategoriesComponent,
     SellerIconComponent,
-    ProductPageComponent
-    // WriteReviewComponent
+    ProductPageComponent,
+    WriteReviewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    NgbRatingModule,
     FormsModule
   ],
   providers: [],

@@ -11,7 +11,15 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductPageComponent {
 
 
-  products: Products[] = []
+  products: Products = {
+    price: 0,
+    color: undefined,
+    gender: undefined,
+    category: undefined,
+    quantity: 0,
+    seller: {},
+    imageUrl: ''
+  }
 
   
   constructor(private productsService: ProductsService, private activateRoute: ActivatedRoute) {
@@ -23,5 +31,6 @@ export class ProductPageComponent {
     console.log(productId);
     this.products = this.productsService.getProductById(productId);
   }
+
 
 }
