@@ -23,7 +23,6 @@ const routes: Routes = [
   {path: 'productPage/:productId', component: ProductPageComponent},
   { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
   { path: 'list', component: SellerCategoriesComponent },
-  { path: 'sellerPortal', component: SellerPortalComponent },
   {path: 'cart', component: CartComponent},
   { path: 'sellerPortal', component: SellerCategoriesComponent },
 
