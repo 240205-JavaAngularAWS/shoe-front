@@ -9,6 +9,7 @@ import { Products } from '../../interfaces/products';
 })
 export class UserPortalComponent {
 
+  searchInputted: string = ""
 
 searchShoesResult: Products[] = []
   searchShoes(results: string) {
