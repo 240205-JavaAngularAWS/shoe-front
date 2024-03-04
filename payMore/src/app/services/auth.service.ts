@@ -32,6 +32,18 @@ export class AuthService {
       JSON.stringify({username, password}),
       headers)
   }
+  loginSeller(username: string, password: string) {
+    sessionStorage.removeItem('username');
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    }
+        return this.http.post<SUser>(`http://localhost:8080/loginSeller`, 
+      JSON.stringify({username, password}),
+      headers)
+  }
+
   validateLoggedIn(): boolean {
     return !!sessionStorage.getItem('username');
   }
