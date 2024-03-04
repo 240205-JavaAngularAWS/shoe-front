@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Products } from '../../interfaces/products';
 import { Seller } from '../../interfaces/seller';
+import { ProductsService } from '../../services/products.service';
 @Component({
   selector: 'seller-categories',
   templateUrl: './seller-categories.component.html',
@@ -12,54 +13,7 @@ export class SellerCategoriesComponent {
   // The additional lifecycle methods will be explored next week (constructor, ngOnInit)
 
   products: Products[] = [
-    {
-      id: 1,
-      price: 300.0,
-      color: 'Red',
-      gender: 'MEN',
-      category: 'Sneakers',
-      quantity: 5,
-      seller: {
-        companyName: 'Nike',
-      },
-      imageUrl: '',
-    },
-    {
-      id: 2,
-      price: 500.0,
-      color: 'Blue',
-      gender: 'WOMEN',
-      category: 'Heels',
-      quantity: 7,
-      seller: {
-        companyName: 'Air',
-      },
-      imageUrl: '',
-    },
-    {
-      id: 3,
-      price: 100.0,
-      color: 'Orange',
-      gender: 'UNISEX',
-      category: 'Sandals',
-      quantity: 20,
-      seller: {
-        companyName: 'Nike',
-      },
-      imageUrl: '',
-    },
-    {
-      id: 4,
-      price: 200.0,
-      color: 'Purple',
-      gender: 'MEN',
-      category: 'Running Shoes',
-      quantity: 12,
-      seller: {
-        companyName: 'Air',
-      },
-      imageUrl: '',
-    },
+
   ];
 
   counter: number = 5;
@@ -97,5 +51,12 @@ export class SellerCategoriesComponent {
 
     this.newCategory = '';
     this.hide = true;
+  }
+
+constructor (private productService: ProductsService) {}
+
+  ngOnInit() {
+
+    this.products = this.productService.getAllProducts();
   }
 }
