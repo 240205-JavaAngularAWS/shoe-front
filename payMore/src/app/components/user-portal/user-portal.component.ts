@@ -37,7 +37,10 @@ export class UserPortalComponent {
   }
 
   ngOnInit() {
-    this.products = this.productsService.getAllProducts();
+    this.productsService.getAllProducts()
+      .subscribe((data)=>{
+        this.products = data
+      });
     this.searchShoesResult = this.products
   }
 

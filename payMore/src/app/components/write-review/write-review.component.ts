@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Output, input } from '@angular/core';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { reviews } from '../../interfaces/reviewsInterface';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { ReviewsService } from '../../services/reviews.service';
 
 @Component({
   selector: 'writeReview',
@@ -17,7 +18,7 @@ export class WriteReviewComponent {
   errorMessageHidden: boolean = true;
 
   postReview(){
-
+    let productId: number = Number(this.activateRoute.snapshot.params['productId']);
     // this.review
     // this.reviewChange.emit(this.review)
 
@@ -28,14 +29,23 @@ export class WriteReviewComponent {
 
     this.errorMessageHidden = true;
     console.log("Thank you for your review!");
+    console.log(this.rating);
     console.log(this.review);
+    console.log(productId);
 
-    // this.authService.writeReview(this.review, this.rating);
+    this.reviewsService.writeReview(this.rating, this.review, productId).subscribe((data)=>{
+      location.reload();
+    });
 
   }
 
-  constructor(private router: Router, private authService: AuthService){
+  constructor(private router: Router, private authService: AuthService, private reviewsService: ReviewsService, private activateRoute: ActivatedRoute){
     
+  }
+
+  ngOnInit(){
+    // let productId: number = Number(this.activateRoute.snapshot.params['productId']);
+    // console.log(productId);
   }
   
 }
