@@ -11,6 +11,7 @@ import { SellerCategoriesComponent } from './components/seller-categories/seller
 import { SellerPortalComponent } from './components/seller-portal/seller-portal.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: 'loginUser', component: UserLoginComponent },
@@ -21,8 +22,11 @@ const routes: Routes = [
   // {path: 'viewProducts', component: ViewProductsComponent},
   {path: 'productPage/:productId', component: ProductPageComponent},
   { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
+  { path: 'list', component: SellerCategoriesComponent },
+  { path: 'sellerPortal', component: SellerPortalComponent },
+  {path: 'cart', component: CartComponent},
   { path: 'sellerPortal', component: SellerCategoriesComponent },
-  { path: 'sellerPortals', component: SellerPortalComponent },
+
 ];
 
 @NgModule({
