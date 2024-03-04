@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'productPage/:productId', component: ProductPageComponent},
   { path: '', pathMatch: 'full', redirectTo: 'loginUser' },
   { path: 'list', component: SellerCategoriesComponent },
-  { path: 'lists', component: SellerPortalComponent },
+  { path: 'sellerPortal', component: SellerPortalComponent },
 ];
 
 @NgModule({
