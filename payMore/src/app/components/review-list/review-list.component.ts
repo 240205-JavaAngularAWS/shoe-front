@@ -34,7 +34,7 @@ export class ReviewListComponent {
     let productId: number = Number(this.activateRoute.snapshot.params['productId']);
     console.log(productId);
     this.reviewsService.getAllReivew(productId)
-    .subscribe((data) => {
+      .subscribe((data) => {
       this.reviews = data
     });
   }
