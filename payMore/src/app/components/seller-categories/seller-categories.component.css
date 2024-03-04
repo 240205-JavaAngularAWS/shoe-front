@@ -1,20 +1,6 @@
-.product-container {
-  display: flex;
-  width: 60%;
-  margin: 0 auto;
-  align-content: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
 
-.new-product-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
 
-.new-product-form button {
+#btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
