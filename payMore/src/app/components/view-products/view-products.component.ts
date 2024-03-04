@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Products } from '../../interfaces/products';
 
 @Component({
@@ -17,5 +17,12 @@ export class ViewProductsComponent {
         companyName: "",
       },
       imageUrl: ''
+    }
+
+    @Output() viewProduct = new EventEmitter();
+
+    viewProductById(){
+      console.log("attempting to view item with ID: " + this.productsInputted.id);
+      this.viewProduct.emit(this.productsInputted);
     }
   }

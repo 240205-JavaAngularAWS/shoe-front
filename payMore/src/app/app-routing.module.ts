@@ -21,7 +21,6 @@ const routes: Routes = [
   { path: 'reviewList', component: ReviewListComponent},
   {path: 'userPortal', component: UserPortalComponent},
   // {path: 'viewProducts', component: ViewProductsComponent},
-  // {path: 'productPage', component: ProductPageComponent},
   {path: 'productPage/:productId', component: ProductPageComponent},
   { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
   { path: 'list', component: SellerCategoriesComponent },
