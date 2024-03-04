@@ -23,6 +23,8 @@ import { SellerProductComponent } from './components/seller-product/seller-produ
 import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
 import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
+import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     SellerCategoriesComponent,
     SellerIconComponent,
     ProductPageComponent,
-    WriteReviewComponent
+    WriteReviewComponent,
+    OrderHistoryComponent,
+    ViewOrdersComponent
   ],
   imports: [
     BrowserModule,

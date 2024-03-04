@@ -11,6 +11,7 @@ import { SellerCategoriesComponent } from './components/seller-categories/seller
 import { SellerPortalComponent } from './components/seller-portal/seller-portal.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 const routes: Routes = [
   { path: 'loginUser', component: UserLoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
   { path: 'sellerPortal', component: SellerCategoriesComponent },
   { path: 'sellerPortals', component: SellerPortalComponent },
+  { path: 'orders', component: OrderHistoryComponent },
 ];
 
 @NgModule({
