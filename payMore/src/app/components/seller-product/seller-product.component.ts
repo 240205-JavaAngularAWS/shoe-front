@@ -17,5 +17,6 @@ export class SellerProductComponent {
       companyName: '',
     },
     imageUrl: '',
+    description: '',
   };
 }
