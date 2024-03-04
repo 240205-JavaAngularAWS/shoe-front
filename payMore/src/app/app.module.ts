@@ -44,7 +44,7 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     SellerPortalComponent,
     SellerProductComponent,
     SellerCategoriesComponent,
-    SellerIconComponent
+    SellerIconComponent,
     ProductPageComponent
     // WriteReviewComponent
   ],
