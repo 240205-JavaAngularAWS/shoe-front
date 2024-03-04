@@ -17,6 +17,10 @@ export class NavBarComponent {
       this.router.navigate(['createAccount'])
   }
 
+  toCart() {
+    this.router.navigate(['cart']);
+  }
+
   constructor(private router: Router){
 
   }

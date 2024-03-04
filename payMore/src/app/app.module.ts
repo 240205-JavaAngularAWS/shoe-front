@@ -23,6 +23,7 @@ import { SellerProductComponent } from './components/seller-product/seller-produ
 import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
 import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     SellerCategoriesComponent,
     SellerIconComponent,
     ProductPageComponent,
-    WriteReviewComponent
+    WriteReviewComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
