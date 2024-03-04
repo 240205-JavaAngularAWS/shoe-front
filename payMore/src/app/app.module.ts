@@ -23,8 +23,13 @@ import { SellerProductComponent } from './components/seller-product/seller-produ
 import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
 import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+<<<<<<< HEAD
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
+=======
+import { CartComponent } from './components/cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> main
 
 
 @NgModule({
@@ -49,15 +54,20 @@ import { ViewOrdersComponent } from './components/view-orders/view-orders.compon
     SellerIconComponent,
     ProductPageComponent,
     WriteReviewComponent,
+<<<<<<< HEAD
     OrderHistoryComponent,
     ViewOrdersComponent
+=======
+    CartComponent
+>>>>>>> main
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     NgbRatingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

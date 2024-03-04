@@ -35,7 +35,7 @@ export class WriteReviewComponent {
   }
 
   constructor(private router: Router, private authService: AuthService){
-
+    
   }
   
 }

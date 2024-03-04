@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Products } from '../../interfaces/products';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'view-products',
@@ -24,5 +25,17 @@ export class ViewProductsComponent {
     viewProductById(){
       console.log("attempting to view item with ID: " + this.productsInputted.id);
       this.viewProduct.emit(this.productsInputted);
+    }
+
+    addToCart() {
+      if(sessionStorage.getItem('username')) {
+        let user = sessionStorage.getItem('username');
+        let userId = user && JSON.parse(user);
+        console.warn(userId);
+      }
+    }
+
+    constructor(private productService: ProductsService) {
+
     }
   }

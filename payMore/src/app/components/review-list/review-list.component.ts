@@ -3,6 +3,7 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { reviews } from '../../interfaces/reviewsInterface';
 import { WriteReviewComponent } from '../write-review/write-review.component';
 import { ReviewsService } from '../../services/reviews.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'reviewList',
@@ -25,12 +26,17 @@ export class ReviewListComponent {
     
   }
 
-  constructor(private reviewsService: ReviewsService){
+  constructor(private reviewsService: ReviewsService, private activateRoute: ActivatedRoute){
 
   }
 
   ngOnInit(){
-    this.reviews = this.reviewsService.getAllReivew();
+    let productId: number = Number(this.activateRoute.snapshot.params['productId']);
+    console.log(productId);
+    this.reviewsService.getAllReivew(productId)
+    .subscribe((data) => {
+      this.reviews = data
+    });
   }
 
 }
