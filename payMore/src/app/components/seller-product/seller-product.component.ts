@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ITodo } from '../../interfaces/ITodo';
+import { Products } from '../../interfaces/products';
 
 @Component({
   selector: 'seller-product',
@@ -7,11 +7,15 @@ import { ITodo } from '../../interfaces/ITodo';
   styleUrl: './seller-product.component.css',
 })
 export class SellerProductComponent {
-
-  @Input() todoInputted: ITodo = {
-    id: 0,
-    text: '',
-    completed: false,
+  @Input() productsInputted: Products = {
+    price: 0,
+    color: '',
+    gender: '',
+    category: '',
+    quantity: 0,
+    seller: {
+      companyName: '',
+    },
+    imageUrl: '',
   };
-
 }

@@ -1,9 +1,9 @@
-import { ITodo } from './ITodo';
-import { SUser } from './SUser';
+import { Products } from './products';
+import { Seller } from './seller';
 
 export interface IList {
   id?: number;
   title: string;
-  owner: SUser;
-  todos: ITodo[];
+  owner: Seller;
+  products: Products[];
 }

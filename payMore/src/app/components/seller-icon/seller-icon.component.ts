@@ -14,7 +14,7 @@ export class SellerIconComponent {
       username: '',
       password: '',
     },
-    todos: [],
+    products: [],
   };
 
 
