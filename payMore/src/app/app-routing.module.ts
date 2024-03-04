@@ -24,8 +24,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
   { path: 'list', component: SellerCategoriesComponent },
   {path: 'cart', component: CartComponent},
+ 
   { path: 'sellerPortal', component: SellerCategoriesComponent },
-
 ];
 
 @NgModule({

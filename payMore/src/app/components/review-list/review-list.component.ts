@@ -33,7 +33,10 @@ export class ReviewListComponent {
   ngOnInit(){
     let productId: number = Number(this.activateRoute.snapshot.params['productId']);
     console.log(productId);
-    this.reviews = this.reviewsService.getAllReivew();
+    this.reviewsService.getAllReivew(productId)
+    .subscribe((data) => {
+      this.reviews = data
+    });
   }
 
 }
