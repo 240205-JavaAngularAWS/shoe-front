@@ -23,6 +23,7 @@ import { SellerProductComponent } from './components/seller-product/seller-produ
 import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
 import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     AppRoutingModule,
     NgbModule,
     NgbRatingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
