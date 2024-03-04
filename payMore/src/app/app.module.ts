@@ -25,6 +25,9 @@ import { SellerIconComponent } from './components/seller-icon/seller-icon.compon
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -55,7 +58,8 @@ import { CartComponent } from './components/cart/cart.component';
     AppRoutingModule,
     NgbModule,
     NgbRatingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

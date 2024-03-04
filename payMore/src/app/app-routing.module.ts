@@ -18,8 +18,6 @@ const routes: Routes = [
   { path: 'createAccount', component: UserRegisterComponent },
   { path: 'loginSeller', component: SellerLoginComponent },
   { path: 'createAccountSeller', component: SellerRegisterComponent },
-  { path: 'writeReview', component: WriteReviewComponent},
-  { path: 'reviewList', component: ReviewListComponent},
   {path: 'userPortal', component: UserPortalComponent},
   // {path: 'viewProducts', component: ViewProductsComponent},
   {path: 'productPage/:productId', component: ProductPageComponent},
@@ -27,6 +25,8 @@ const routes: Routes = [
   { path: 'list', component: SellerCategoriesComponent },
   { path: 'sellerPortal', component: SellerPortalComponent },
   {path: 'cart', component: CartComponent},
+ 
+  { path: 'sellerPortal', component: SellerCategoriesComponent },
 ];
 
 @NgModule({
