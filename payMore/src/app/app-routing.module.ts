@@ -17,8 +17,6 @@ const routes: Routes = [
   { path: 'createAccount', component: UserRegisterComponent },
   { path: 'loginSeller', component: SellerLoginComponent },
   { path: 'createAccountSeller', component: SellerRegisterComponent },
-  { path: 'writeReview', component: WriteReviewComponent},
-  { path: 'reviewList', component: ReviewListComponent},
   {path: 'userPortal', component: UserPortalComponent},
   // {path: 'viewProducts', component: ViewProductsComponent},
   {path: 'productPage/:productId', component: ProductPageComponent},
