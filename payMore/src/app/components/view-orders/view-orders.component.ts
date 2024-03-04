@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Orders } from '../../interfaces/orders';
+import { IOrder } from '../../interfaces/IOrder';
+import { OrdersService } from '../../services/orders.service';
 
 @Component({
   selector: 'view-orders',
@@ -7,14 +8,26 @@ import { Orders } from '../../interfaces/orders';
   styleUrl: './view-orders.component.css'
 })
 export class ViewOrdersComponent {
-
-
-  @Input() ordersInputted: Orders = {
-    priceTotal: 10.00,
-    time:'',
-    orderItems:''
-
-    
+  
+  constructor(private ordersService: OrdersService){
+    // inject service
   }
+
+
+  orders: IOrder[] = []
+
+  ngOnInit(){
+    this.ordersService.getOrdersByUserId()
+
+  }
+
+
+
+
+
+
+
+
+
 
 }
