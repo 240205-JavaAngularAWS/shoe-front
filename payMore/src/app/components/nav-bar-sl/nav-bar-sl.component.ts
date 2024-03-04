@@ -16,6 +16,9 @@ toLogin(){
 toCreateUser(){
   this.router.navigate(['createAccountSeller'])
 }
+toCart() {
+  this.router.navigate(['cart']);
+}
 
 constructor(private router: Router){
 
