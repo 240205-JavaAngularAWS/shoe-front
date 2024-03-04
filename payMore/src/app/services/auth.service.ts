@@ -8,26 +8,29 @@ import { IRegisterSeller } from '../interfaces/IRegisterSeller';
 })
 export class AuthService {
   users: SUser[] = [
-    {
-      username: 'eric',
-      password: 'password',
-    },
-    {
-      username: 'user1',
-      password: 'password',
-    },
-    {
-      username: 'user2',
-      password: 'password',
-    },
+    // {
+    //   username: 'eric',
+    //   password: 'password',
+    // },
+    // {
+    //   username: 'user1',
+    //   password: 'password',
+    // },
+    // {
+    //   username: 'user2',
+    //   password: 'password',
+    // },
   ];
   loginUser(username: string, password: string) {
     sessionStorage.removeItem('username');
-    for (let user of this.users) {
-      if (user.username == username && user.password == password) {
-        sessionStorage.setItem('username', username);
-      }
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
     }
+        return this.http.post<SUser>(`http://localhost:8080/loginUser`, 
+      JSON.stringify({username, password}),
+      headers)
   }
   validateLoggedIn(): boolean {
     return !!sessionStorage.getItem('username');
@@ -142,7 +145,7 @@ export class AuthService {
     return !!sessionStorage.getItem('userName');
   }
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 }
 
 
