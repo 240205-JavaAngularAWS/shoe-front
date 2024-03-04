@@ -17,7 +17,7 @@ export class UserPortalComponent {
   viewProduct($event: Products){
     console.log($event.id);
     let id = $event.id;
-    this.router.navigate([`productPage/ ${id}`]);
+    this.router.navigate([`productPage/${id}`]);
 
     //       this.router.navigate(['userPortal']);
   }
