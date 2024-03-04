@@ -8,47 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ReviewsService {
 
-  reviews: reviews[] = [
-    // {
-    //   id: 1,
-    //   product: {
-    //       id: 3,
-    //       price: 2.50,
-    //       color: "black",
-    //       gender: "female",
-    //       category: "sneaker",
-    //       quantity: 1
-    //   },
-    //   content: "ok.",
-    //   rating: 3
-    // },
-    // {
-    //   id: 2,
-    //   product: {
-    //       id: 3,
-    //       price: 2.50,
-    //       color: "black",
-    //       gender: "female",
-    //       category: "sneaker",
-    //       quantity: 1
-    //   },
-    //   content: "Terrible!",
-    //   rating: 1
-    // },
-    // {
-    //   id: 3,
-    //   product: {
-    //       id: 3,
-    //       price: 2.50,
-    //       color: "black",
-    //       gender: "female",
-    //       category: "sneaker",
-    //       quantity: 1
-    //   },
-    //   content: "great product!",
-    //   rating: 5
-    // }
-  ]
+  reviews: reviews[] = []
 
   // this is for when user clicks on a single review to view it
   // getSingleReview(id: number){
