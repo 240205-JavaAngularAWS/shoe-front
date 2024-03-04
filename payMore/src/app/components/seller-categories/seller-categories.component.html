@@ -1,12 +1,12 @@
 <div
   id="TodoContainer"
-  *ngIf="todos.length > 0; else elseBlock"
+  *ngIf="products.length > 0; else elseBlock"
   class="todo-container"
 >
   <div class="todo">
     <seller-product
-      *ngFor="let todo of todos"
-      [todoInputted]="todo"
+      *ngFor="let product of products"
+      [productsInputted]="product"
     ></seller-product>
   </div>
 </div>
@@ -23,8 +23,7 @@
     type="text"
     placeholder="Change Me!"
     maxlength="50"
-    [(ngModel)]="newTodoText"
   />
-  <button (click)="createNewTodo()">Add Shoe</button>
+  <button >Add Shoe</button>
    <p class="error-message" [hidden]="hide">Shoe text can't be blank!</p>
 </div>

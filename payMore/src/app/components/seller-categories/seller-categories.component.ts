@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ITodo } from '../../interfaces/ITodo';
+import { Products } from '../../interfaces/products';
+import { Seller } from '../../interfaces/seller';
 @Component({
   selector: 'seller-categories',
   templateUrl: './seller-categories.component.html',
@@ -10,53 +11,91 @@ export class SellerCategoriesComponent {
   // We can define fields and functions inside of here just as we would in normal TS/JS
   // The additional lifecycle methods will be explored next week (constructor, ngOnInit)
 
-  todos: ITodo[] = [
+  products: Products[] = [
     {
       id: 1,
-      text: 'Do the dishes',
-      completed: true,
+      price: 300.0,
+      color: 'Red',
+      gender: 'MEN',
+      category: 'Sneakers',
+      quantity: 5,
+      seller: {
+        companyName: 'Nike',
+      },
+      imageUrl: '',
     },
     {
       id: 2,
-      text: 'Take out the trash',
-      completed: false,
+      price: 500.0,
+      color: 'Blue',
+      gender: 'WOMEN',
+      category: 'Heels',
+      quantity: 7,
+      seller: {
+        companyName: 'Air',
+      },
+      imageUrl: '',
     },
     {
       id: 3,
-      text: 'Pack for trip',
-      completed: false,
+      price: 100.0,
+      color: 'Orange',
+      gender: 'UNISEX',
+      category: 'Sandals',
+      quantity: 20,
+      seller: {
+        companyName: 'Nike',
+      },
+      imageUrl: '',
     },
     {
       id: 4,
-      text: 'Make dinner',
-      completed: false,
+      price: 200.0,
+      color: 'Purple',
+      gender: 'MEN',
+      category: 'Running Shoes',
+      quantity: 12,
+      seller: {
+        companyName: 'Air',
+      },
+      imageUrl: '',
     },
   ];
 
   counter: number = 5;
-  newTodoText: string = '';
+  newPrice: number = 0;
+  newColor: string = '';
+  newGender: string = '';
+  newCategory: string = '';
+  newQuantity: number = 0;
+  newSeller: Seller = { companyName: '' };
+  newImage: string = '';
+  newDescription: string = '';
+
   hide: boolean = true;
 
-  createNewTodo() {
-    // console.log("clicked!")
-    // Goal -> Extract value of newTodoText and create a todo for it
-    // console.log(this.newTodoText)
-    // We'll check to see if the todo entry has a length greater than zero, if so we can add it, otherwise we'll display an error message
-    if (!this.newTodoText) {
+  createProduct() {
+    if (!this.newCategory) {
       // console.log("Text is blank")
       // TODO add in error message
       this.hide = false;
       return;
     }
-    // Now we're at the part where we try to create the new todo
-    let newTodo: ITodo = {
+    // Now we're at the part where we try to create the product
+    let newProduct: Products = {
       id: 0,
-      text: this.newTodoText,
-      completed: false,
+      price: this.newPrice,
+      color: this.newColor,
+      gender: this.newGender,
+      category: this.newCategory,
+      quantity: this.newQuantity,
+      seller: this.newSeller,
+      imageUrl: this.newImage,
+      description: this.newDescription,
     };
-    this.todos.push(newTodo);
+    this.products.push(newProduct);
 
-    this.newTodoText = '';
+    this.newCategory = '';
     this.hide = true;
   }
 }
