@@ -17,6 +17,7 @@ export class SellerLoginComponent {
     let successfulLogin: boolean = this.authService.validateLoggedIn();
     if(successfulLogin) {
       console.log("Successful Login!");
+      this.router.navigate(['sellerPortal']);
       this.errorMessageHidden = true;
     } else {
       console.log("Unable to verify. Please try again.");
