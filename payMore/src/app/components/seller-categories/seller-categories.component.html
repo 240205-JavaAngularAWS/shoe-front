@@ -1,9 +1,5 @@
-<div
-  id="TodoContainer"
-  *ngIf="products.length > 0; else elseBlock"
-  class="todo-container"
->
-  <div class="todo">
+<div *ngIf="products.length > 0; else elseBlock" class="product-container">
+  <div>
     <seller-product
       *ngFor="let product of products"
       [productsInputted]="product"
@@ -15,15 +11,15 @@
   <h2>No Shoes in this list!</h2>
 </ng-template>
 
-<div id="NewTodoForm" class="new-todo-form">
-  <label for="new-todo">Shoe Category: </label>
+<div class="new-product-form">
+  <label >Shoe Category: </label>
   <input
-    id="new-todo"
-    name="new-todo"
+    id="new-product"
+    name="new-product"
     type="text"
     placeholder="Change Me!"
     maxlength="50"
   />
-  <button >Add Shoe</button>
-   <p class="error-message" [hidden]="hide">Shoe text can't be blank!</p>
+  <button>Add Shoe</button>
+  <p class="error-message" [hidden]="hide">Shoe text can't be blank!</p>
 </div>
