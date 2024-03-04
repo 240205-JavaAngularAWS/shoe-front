@@ -4,7 +4,7 @@
     <!-- <app-nav-bar></app-nav-bar> -->
 <div>
     <p style="text-align: center; font-weight: bolder; font-size: 50px;">Products Name:</p>
-<view-products [productsInputted]="products[1]"></view-products>
+    <view-products *ngFor="let product of products" [productsInputted]="product"></view-products>
 </div>
 </div>
 
