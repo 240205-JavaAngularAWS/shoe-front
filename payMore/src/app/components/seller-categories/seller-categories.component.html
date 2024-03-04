@@ -1,5 +1,6 @@
-<div *ngIf="products.length > 0; else elseBlock" class="product-container">
+<div *ngIf="products.length > 0; else elseBlock">
   <div>
+    <p style="text-align: center; font-weight: bolder; font-size: 50px;">Seller Portal</p>
     <seller-product
       *ngFor="let product of products"
       [productsInputted]="product"
@@ -11,8 +12,8 @@
   <h2>No Shoes in this list!</h2>
 </ng-template>
 
-<div class="new-product-form">
-  <label >Shoe Category: </label>
+<div>
+  <label>Shoe Category: </label>
   <input
     id="new-product"
     name="new-product"
@@ -20,6 +21,6 @@
     placeholder="Change Me!"
     maxlength="50"
   />
-  <button>Add Shoe</button>
+  <button id="btn">Add Shoe</button>
   <p class="error-message" [hidden]="hide">Shoe text can't be blank!</p>
 </div>
