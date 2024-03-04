@@ -23,7 +23,7 @@ const routes: Routes = [
   // {path: 'viewProducts', component: ViewProductsComponent},
   // {path: 'productPage', component: ProductPageComponent},
   {path: 'productPage/:productId', component: ProductPageComponent},
-  { path: '', pathMatch: 'full', redirectTo: 'loginUser' },
+  { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
   { path: 'list', component: SellerCategoriesComponent },
   { path: 'sellerPortal', component: SellerPortalComponent },
 ];
