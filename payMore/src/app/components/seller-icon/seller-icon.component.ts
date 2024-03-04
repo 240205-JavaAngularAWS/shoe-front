@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IList } from '../../interfaces/IList';
+import { sellerList } from '../../interfaces/sellerList';
 import { Router } from '@angular/router';
 @Component({
   selector: 'seller-icon',
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrl: './seller-icon.component.css',
 })
 export class SellerIconComponent {
-  @Input() listInputted: IList = {
+  @Input() listInputted: sellerList = {
     id: 0,
     title: '',
     owner: {
@@ -16,6 +16,4 @@ export class SellerIconComponent {
     },
     products: [],
   };
-
-
 }

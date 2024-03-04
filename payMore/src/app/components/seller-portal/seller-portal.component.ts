@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IList } from '../../interfaces/IList';
+import { sellerList } from '../../interfaces/sellerList';
 import { SellerProductsService } from '../../services/seller-products.service';
 @Component({
   selector: 'seller-portal',
@@ -7,10 +7,9 @@ import { SellerProductsService } from '../../services/seller-products.service';
   styleUrl: './seller-portal.component.css',
 })
 export class SellerPortalComponent {
-  lists: IList[] = [];
+  lists: sellerList[] = [];
 
   constructor(private sellerService: SellerProductsService) {}
-
 
   ngOnInit() {
     // we use the ngOnInit lifecycle method to control the initiliazation for our variables
