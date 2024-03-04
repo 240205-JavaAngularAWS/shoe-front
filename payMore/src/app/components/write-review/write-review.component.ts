@@ -16,7 +16,7 @@ export class WriteReviewComponent {
   rating: number = 5;
   errorMessageHidden: boolean = true;
 
-  toReviewList(){
+  postReview(){
 
     // this.review
     // this.reviewChange.emit(this.review)
@@ -26,13 +26,16 @@ export class WriteReviewComponent {
       return;
     }
 
+    this.errorMessageHidden = true;
+    console.log("Thank you for your review!");
+    console.log(this.review);
+
     // this.authService.writeReview(this.review, this.rating);
 
-    this.router.navigate(['reviewList'])
   }
 
   constructor(private router: Router, private authService: AuthService){
-
+    
   }
   
 }

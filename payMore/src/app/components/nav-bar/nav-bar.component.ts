@@ -9,6 +9,10 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class NavBarComponent {
 
+  toHome(){
+    this.router.navigate([''])
+  }
+
   toLogin(){
       this.router.navigate(['loginUser'])
   }

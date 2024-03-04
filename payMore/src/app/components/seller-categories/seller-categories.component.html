@@ -1,12 +1,8 @@
-<div
-  id="TodoContainer"
-  *ngIf="todos.length > 0; else elseBlock"
-  class="todo-container"
->
-  <div class="todo">
+<div *ngIf="products.length > 0; else elseBlock" class="product-container">
+  <div>
     <seller-product
-      *ngFor="let todo of todos"
-      [todoInputted]="todo"
+      *ngFor="let product of products"
+      [productsInputted]="product"
     ></seller-product>
   </div>
 </div>
@@ -15,16 +11,15 @@
   <h2>No Shoes in this list!</h2>
 </ng-template>
 
-<div id="NewTodoForm" class="new-todo-form">
-  <label for="new-todo">To-Do Text: </label>
+<div class="new-product-form">
+  <label >Shoe Category: </label>
   <input
-    id="new-todo"
-    name="new-todo"
+    id="new-product"
+    name="new-product"
     type="text"
     placeholder="Change Me!"
     maxlength="50"
-    [(ngModel)]="newTodoText"
   />
-  <button (click)="createNewTodo()">Add Shoe</button>
-   <p class="error-message" [hidden]="hide">Shoe text can't be blank!</p>
+  <button>Add Shoe</button>
+  <p class="error-message" [hidden]="hide">Shoe text can't be blank!</p>
 </div>
