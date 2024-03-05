@@ -1,2 +1,16 @@
- <view-products *ngFor="let product of products" [productsInputted]="product"></view-products> 
+ 
+     <div *ngIf="SessionStorageLength == 0; else elseBlock">
+        <app-nav-bar></app-nav-bar>
+    </div>
+    <ng-template #elseBlock>
+        <userNav></userNav>
+    </ng-template>
+
+    <br>
+ 
+
+    <div class="container">
+        
+    </div>
+
 

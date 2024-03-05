@@ -18,10 +18,14 @@ constructor(private ordersService: OrdersService, private activateRoute: Activat
 }
 
 loadOrders(userId: number): void {
+
   this.ordersService.getOrdersByUserId(userId).subscribe((orders) => {
     this.orders = orders;
+    
     this.orders.forEach(order => {
+      
       order.orderItems.forEach(item => {
+        
         this.ordersService.getProductInfo(item.productId).pipe(
         ).subscribe(url => {
           item.imageUrl = url.imageUrl; // Add pictureUrl property dynamically
@@ -33,7 +37,10 @@ loadOrders(userId: number): void {
 
 
 ngOnInit(){
-  let userId : number = 5;
+  let stringId :(string | null) = sessionStorage.getItem("id");
+
+  // get sessionStorage Id or return user ID 5. 
+  let userId : number = stringId ? parseInt(stringId) :  5;
   this.loadOrders(userId);
   console.log(`Orders" ${this.orders}`);
 

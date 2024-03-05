@@ -2,9 +2,11 @@
   <div *ngFor="let order of orders" class="order-card">
     <div class="order-header">
       <h5>Order ID: {{order.id}}</h5>
+      <!-- Format the timestamp-->
       <span class="order-timestamp">{{order.timestamp | date: 'medium'}}</span>
     </div>
     <div class="order-details">
+      <!-- Format the price -->
       <p>Total Price: {{order.priceTotal | currency}}</p>
       <div class="order-items">
         <h5>Order Items:</h5>
