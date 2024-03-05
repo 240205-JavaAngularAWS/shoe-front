@@ -16,7 +16,7 @@ private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'
 
 
   getOrdersByUserId(userId : number): Observable<IOrder[]>{
-    return this.http.get<IOrder[]>(`${this.url}orders/users/filterBy?userId=${userId}&status=PENDING`, this.headers)
+    return this.http.get<IOrder[]>(`${this.url}/orders/users/filterBy?userId=${userId}&status=PENDING`, this.headers)
 
       // Subscribe on the component side.
   }

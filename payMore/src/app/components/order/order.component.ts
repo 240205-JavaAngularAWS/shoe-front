@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
 import { IOrder } from '../../interfaces/IOrder';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -9,19 +10,27 @@ import { IOrder } from '../../interfaces/IOrder';
 })
 export class OrderComponent implements OnInit {
 orders: IOrder[] = [];
-orderId: number = 0;
 
 
 
-constructor(private ordersService: OrdersService){
+constructor(private ordersService: OrdersService, private activateRoute: ActivatedRoute){
   
 }
 
+loadOrders(userId: number): void {
+  this.ordersService.getOrdersByUserId(userId).subscribe((data) => {
+    console.log(data);
+  this.orders = data;
 
+})
+}
 
 
 ngOnInit(){
-  this.loadOrders();
+  let userId : number = 4;
+  this.loadOrders(userId);
+
+  console.log(userId);
 
 
 
@@ -31,18 +40,7 @@ ngOnInit(){
 }
 
 
-loadOrders(): void {
-  const rawId: (string | null) = sessionStorage.getItem("userId");
-  const userId: number = (rawId ? parseInt(rawId) : 4);
-  
-  this.ordersService.getOrdersByUserId(userId).subscribe((orders: IOrder[]) => {
-    this.orders = orders;
 
-  })
-
-  
-
-}
 
 
 }
