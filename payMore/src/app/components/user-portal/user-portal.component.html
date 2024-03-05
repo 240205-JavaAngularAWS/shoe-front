@@ -37,7 +37,7 @@
         <!-- content -->
         <div>
             <!-- title for content -->
-            <p style="text-align: center; font-weight: bolder; font-size: 50px;">Products</p>
+            <p style="text-align: center; font-weight: bolder; font-size: 50px;">Products:</p>
             <div class="row">
                 <view-products class="col-sm-4 mb-3 mb-sm-0" *ngFor="let product of products" [productsInputted]="product" (viewProduct)="viewProduct($event)"></view-products>
             </div>
