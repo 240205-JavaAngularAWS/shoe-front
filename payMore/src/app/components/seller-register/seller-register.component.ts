@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-seller-register',
@@ -16,29 +17,45 @@ export class SellerRegisterComponent {
   cityRegisterInput: string = '';
   stateRegisterInput: string = '';
   zipCodeRegisterInput: string = '';
-  errorMessageHidden: boolean = true;
+  errorMessage: string = '';
+  successMessage: string = '';
+  subscription: Subscription = new Subscription();
+
+  constructor(private router: Router, private authService: AuthService) {}
+
   registerSeller() {
-    this.authService.sellerRegister(
-      this.companyRegisterInput,
-      this.userNameRegisterInput,
-      this.passwordRegisterInput,
-      this.emailRegisterInput,
-      this.addressRegisterInput,
-      this.cityRegisterInput,
-      this.stateRegisterInput,
-      this.zipCodeRegisterInput
-    );
-    let successfulRegister: boolean = this.authService.validateRegisterSeller();
-    if (successfulRegister) {
-      console.log('Successful Register!');
-      this.errorMessageHidden = true;
-    } else {
-      console.log('Missing Fields. Please try again.');
-      this.errorMessageHidden = false;
+    const sellerData = {
+      companyName: this.companyRegisterInput,
+      username: this.userNameRegisterInput,
+      password: this.passwordRegisterInput,
+      email: this.emailRegisterInput,
+      address: this.addressRegisterInput,
+      city: this.cityRegisterInput,
+      state: this.stateRegisterInput,
+      zipCode: this.zipCodeRegisterInput
+     
+    };
+
+    this.subscription = this.authService.sellerRegister(sellerData).subscribe({
+      next: (response) => {
+        console.log('Seller registration successful', response);
+        this.successMessage = 'Seller registration successful!';
+      },
+      error: (error) => {
+        console.log('Error registering seller', error);
+        this.errorMessage = 'Error registering seller';
+      }
+  });
+}
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
+
   }
   toUserRegister() {
     this.router.navigate(['createAccount']);
   }
-  constructor(private router: Router, private authService: AuthService) {}
+
 }
