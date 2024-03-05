@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Products } from '../../interfaces/products';
 import { ProductsService } from '../../services/products.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -44,7 +45,9 @@ products: any[] = [];
       }
     }
 
-    constructor(private productService: ProductsService, private router: Router) {
+    constructor(private productService: ProductsService,
+       private router: Router,
+       private http: HttpClient) {
 
     }
   }
