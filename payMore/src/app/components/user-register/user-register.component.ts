@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Subscription } from 'rxjs';
 
+
 @Component({
   selector: 'user-register',
   templateUrl: './user-register.component.html',

@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Subscription } from 'rxjs';
+import { IAddress } from '../../interfaces/IAddress';
 
 @Component({
-  selector: 'app-seller-register',
+  selector: 'seller-register',
   templateUrl: './seller-register.component.html',
   styleUrl: './seller-register.component.css',
 })
@@ -29,11 +30,12 @@ export class SellerRegisterComponent {
       username: this.userNameRegisterInput,
       password: this.passwordRegisterInput,
       email: this.emailRegisterInput,
-      address: this.addressRegisterInput,
-      city: this.cityRegisterInput,
-      state: this.stateRegisterInput,
-      zipCode: this.zipCodeRegisterInput
-     
+      address: {
+        addressText: this.addressRegisterInput,
+        city: this.cityRegisterInput,
+        state: this.stateRegisterInput,
+        zipCode: this.zipCodeRegisterInput
+      } as IAddress,
     };
 
     this.subscription = this.authService.sellerRegister(sellerData).subscribe({
