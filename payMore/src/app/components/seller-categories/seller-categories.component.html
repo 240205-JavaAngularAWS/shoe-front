@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+<sellerNav></sellerNav>
 <div *ngIf="products.length > 0; else elseBlock">
   <div>
     <p style="text-align: center; font-weight: bolder; font-size: 50px;">Seller Portal</p>
@@ -54,14 +54,7 @@
     maxlength="50"
     [(ngModel)]="newQuantity"
   />
-   <label>Shoe Seller: </label>
-  <input
-    id="new-product"
-    name="new-product"
-    type="text"
-    maxlength="50"
-    [(ngModel)]="newSeller"
-  />
+
      <label>Shoe Image: </label>
   <input
     id="new-product"

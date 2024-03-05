@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductPageComponent {
 
+  SessionStorageLength: number = sessionStorage.length;
 
   products: Products = {
     price: 0,

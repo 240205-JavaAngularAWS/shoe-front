@@ -1,9 +1,20 @@
 <div>
-    <app-nav-bar></app-nav-bar>
-    <div>
-        <p style="text-align: center; font-weight: bolder; font-size: 50px;">Products Name:</p>
-        <view-products [productsInputted]="products"></view-products>
+    <!-- nav bar -->
+    <div *ngIf="SessionStorageLength == 0; else elseBlock">
+        <app-nav-bar></app-nav-bar>
     </div>
-    <reviewList></reviewList>
+    <ng-template #elseBlock>
+        <userNav></userNav>
+    </ng-template>
+    <!-- content -->
+    <div>
+        <!-- title for content -->
+        <p style="text-align: center; font-weight: bolder; font-size: 50px;">Products:</p>
+        <div class="row d-flex justify-content-around">
+            <view-products class="col-sm-6 mb-3 mb-sm-0" [productsInputted]="products"></view-products>
+            <!-- review list and write review -->
+            <reviewList class="col-sm-3 mb-3 mb-sm-0"></reviewList>
+        </div>
+    </div>
 </div>
 

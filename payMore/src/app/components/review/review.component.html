@@ -1,6 +1,5 @@
 <!-- <p>review works!</p> -->
-<div>
+<div class="row">
     <p>{{reviewInputted.content}}</p>
-    <p>{{reviewInputted.rating}}</p>
-    <!-- <button (click)="viewTodo()">view</button> -->
+    <pre>Rate: <b>{{ reviewInputted.rating }}</b><ngb-rating [max] = 1 [readonly] = true [rate]="1" /></pre>
 </div>
