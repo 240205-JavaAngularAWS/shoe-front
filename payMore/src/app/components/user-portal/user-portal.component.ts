@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class UserPortalComponent {
 
+  SessionStorageLength: number = sessionStorage.length;
+
   searchInputted: string = "";
 
   categorySelected: string = "";
