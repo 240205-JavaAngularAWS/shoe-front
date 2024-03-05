@@ -45,7 +45,7 @@ export class AuthService {
   }
 
   validateLoggedIn(): boolean {
-    return !!sessionStorage.getItem('username');
+    return !!sessionStorage.getItem('id');
   }
   // Register Users
   registerUsers: IRegisterUser[] = [
