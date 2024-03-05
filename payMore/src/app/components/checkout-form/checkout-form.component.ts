@@ -1,35 +1,52 @@
-import { Component } from '@angular/core';
+// checkout.component.ts
+import { Component, OnInit } from '@angular/core';
 import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
-  selector: 'app-checkout-form',
+  selector: 'app-checkout',
   templateUrl: './checkout-form.component.html',
-  styleUrl: './checkout-form.component.css'
+  styleUrls: ['./checkout-form.component.css']
 })
-export class CheckoutFormComponent {
+export class CheckoutComponent implements OnInit{
+  creditCardNumber: string = '';
+  expirationDate: string = ' ';
+  securityCode: number = 0;
+  orderDetails: any;
+  userId!: number;
 
- placedOrders: string[] = ['Order 1', 'Order 2'];
-  billingInfo: any = {};
-  creditCardInfo: any = {};
+  constructor(private checkoutService: CheckoutService) {}
 
-  constructor(private checkoutService: CheckoutService) { }
-
-  submitCheckout(): void {
+  submitCheckoutForm() {
     const checkoutData = {
-      billingInfo: this.billingInfo,
-      creditCardInfo: this.creditCardInfo
+      creditCardNumber: this.creditCardNumber,
+      expirationDate: this.expirationDate,
+      securityCode: this.securityCode,
+      // You can include other credit card fields here
     };
 
-    this.checkoutService.submitCheckout(checkoutData).subscribe(
+    // Call the service method to submit the checkout data
+    this.checkoutService.submitCheckout(checkoutData)
+      .subscribe(
+        (response) => {
+          console.log('Order submitted successfully:', response);
+         
+        },
+        (error) => {
+          console.error('Error submitting order:', error);
+          // Handle error response
+        }
+      );
+  }
+
+  ngOnInit() {
+    // Fetching order details from the backend when the component initializes
+    this.checkoutService.getOrderDetails(this.userId).subscribe(
       (response) => {
-        console.log('Checkout submitted successfully:', response);
-        // You might want to reset form fields or show a success message here
+        this.orderDetails = response;
       },
       (error) => {
-        console.error('Error submitting checkout:', error);
-        // You might want to display an error message to the user
+        console.error('Error fetching order details:', error);
       }
     );
   }
-
 }

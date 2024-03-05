@@ -1,16 +1,18 @@
-import { TestBed } from '@angular/core/testing';
+// checkout.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import { CheckoutService } from './checkout.service';
+@Injectable({
+  providedIn: 'root'
+})
+export class CheckoutService {
 
-describe('CheckoutService', () => {
-  let service: CheckoutService;
+  constructor(private http: HttpClient) {}
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(CheckoutService);
-  });
+  // Method to fetch order details from the backend
+  getOrderDetails(orderId: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/orders/${orderId}`);
+  }
+}
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
