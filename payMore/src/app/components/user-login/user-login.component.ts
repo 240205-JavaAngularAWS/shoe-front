@@ -12,21 +12,20 @@ export class UserLoginComponent {
   usernameInput: string = ""
   passwordInput: string = ""
   errorMessageHidden: boolean = true   
-  loginUser() {
-    // console.log("Login Attempted!");
-    // console.log(this.usernameInput);
-    // console.log(this.passwordInput);
+  loginUser(){
+    this.authService.loginUser(this.usernameInput, this.passwordInput).subscribe((data) => {
+      sessionStorage.setItem("id", JSON.stringify(data.id))
 
-    this.authService.loginUser(this.usernameInput, this.passwordInput);
-    let successfulLogin: boolean = this.authService.validateLoggedIn();
-    if(successfulLogin) {
-      console.log("Successful Login!");
-      this.errorMessageHidden = true;
-      this.router.navigate(['userPortal']);
-    } else {
-      console.log("Unable to verify. Please try again.");
-      this.errorMessageHidden = false;
-    }
+      let successfulLogin: boolean = this.authService.validateLoggedIn();
+
+      if(successfulLogin){
+        console.log("Success!")
+        this.router.navigate(['userPortal'])
+      }else {
+        console.log("Unable to validate Credentials. Please try again.")
+      }
+    })
+
   }
   toSellerLogin(){
     this.router.navigate(['loginSeller'])

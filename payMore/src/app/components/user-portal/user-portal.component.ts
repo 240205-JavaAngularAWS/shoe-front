@@ -10,7 +10,11 @@ import { Router } from '@angular/router';
 })
 export class UserPortalComponent {
 
-  searchInputted: string = ""
+  SessionStorageLength: number = sessionStorage.length;
+
+  searchInputted: string = "";
+
+  categorySelected: string = "";
 
   searchShoesResult: Products[] = []
 
@@ -18,18 +22,44 @@ export class UserPortalComponent {
     console.log($event.id);
     let id = $event.id;
     this.router.navigate([`productPage/${id}`]);
-
-    //       this.router.navigate(['userPortal']);
   }
 
+  // search shoe by keywprd
   searchShoes(results: string) {
     if(!results) {
       this.searchShoesResult = this.products;
       return;
     } 
-    this.searchShoesResult = this.products.filter(searchShoes => {
-      searchShoes?.gender.toLowerCase().includes(results.toLowerCase())
-    })
+    // this.searchShoesResult = this.products.filter(searchShoes => {
+    //   searchShoes?.gender.toLowerCase().includes(results.toLowerCase())
+    // })
+
+    console.log(results);
+
+    this.productsService.findProductByKeyword(results)
+      .subscribe((data)=>{
+        this.products = data
+      });
+      this.searchShoesResult = this.products;
+  }
+
+  // clears search result and refresh the page
+  clearSearchResults(){
+    location.reload();
+  }
+
+  // filter shoes by category
+  filterShoes(category: string){
+    console.log(category);
+    if(!category) {
+      this.searchShoesResult = this.products;
+      return;
+    }
+    this.productsService.findProductByCategory(category)
+      .subscribe((data)=>{
+        this.products = data
+      });
+      this.searchShoesResult = this.products;
   }
 
   products: Products[] = []
@@ -37,7 +67,10 @@ export class UserPortalComponent {
   }
 
   ngOnInit() {
-    this.products = this.productsService.getAllProducts();
+    this.productsService.getAllProducts()
+      .subscribe((data)=>{
+        this.products = data
+      });
     this.searchShoesResult = this.products
   }
 

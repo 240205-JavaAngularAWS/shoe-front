@@ -11,7 +11,7 @@
         <label for="password">Password: </label>
         <input type="text" id="password" name="password" [(ngModel)]="passwordInput">
 
-        <button id="loginButton" (click)="loginUser()">Seller Login</button>
+        <button id="loginButton" (click)="loginSeller()">Seller Login</button>
         <br>
         <p id="errorMessage" style="color: red;"[hidden]="errorMessageHidden" >Username/Password Incorrect!</p>
         <p>Not a seller? Log In as Buyer <a style="color: blue; cursor: pointer;" (click)="toBuyerLogin()">Here.</a> </p>

@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+<sellerNav></sellerNav>
 <div *ngIf="products.length > 0; else elseBlock">
   <div>
     <p style="text-align: center; font-weight: bolder; font-size: 50px;">Seller Portal</p>
@@ -14,14 +14,64 @@
 </ng-template>
 
 <div>
-  <label>Shoe Category: </label>
+  <label>Shoe Price: </label>
   <input
     id="new-product"
     name="new-product"
     type="text"
-    placeholder="Change Me!"
     maxlength="50"
+    [(ngModel)]="newPrice"
   />
-  <button id="btn">Add Shoe</button>
+   <label>Shoe Color: </label>
+  <input
+    id="new-product"
+    name="new-product"
+    type="text"
+    maxlength="50"
+    [(ngModel)]="newColor"
+  />
+   <label>Gender: </label>
+  <input
+    id="new-product"
+    name="new-product"
+    type="text"
+    maxlength="50"
+    [(ngModel)]="newGender"
+  />
+    <label>Shoe Category: </label>
+  <input
+    id="new-product"
+    name="new-product"
+    type="text"
+    maxlength="50"
+    [(ngModel)]="newCategory"
+  />
+   <label>Shoe Quantity: </label>
+  <input
+    id="new-product"
+    name="new-product"
+    type="text"
+    maxlength="50"
+    [(ngModel)]="newQuantity"
+  />
+
+     <label>Shoe Image: </label>
+  <input
+    id="new-product"
+    name="new-product"
+    type="text"
+    maxlength="50"
+    [(ngModel)]="newImage"
+  />
+     <label>Shoe Description: </label>
+  <input
+    id="new-product"
+    name="new-product"
+    type="text"
+    maxlength="50"
+    [(ngModel)]="newDescription"
+  />
+  
+  <button id="btn" (click)="createProduct()">Add Shoe</button>
   <p class="error-message" [hidden]="hide">Shoe text can't be blank!</p>
 </div>

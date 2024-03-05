@@ -1,7 +1,14 @@
-<p>user-nav works!</p>
 <ul ngbNav #nav="ngbNav" class="nav-tabs">
     <li ngbNavItem>
-      <button ngbNavLink>Account</button>
+      <button ngbNavLink (click)="toHome()">Home</button>
+      <ng-template ngbNavContent></ng-template>
+    </li>
+    <li ngbNavItem>
+      <button ngbNavLink (click)="toOrderHistory()">Order History</button>
+      <ng-template ngbNavContent></ng-template>
+    </li>
+    <li ngbNavItem>
+      <button ngbNavLink (click)="toCart()">Cart</button>
       <ng-template ngbNavContent></ng-template>
     </li>
     <li ngbNavItem>

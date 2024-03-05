@@ -11,6 +11,7 @@ import { SellerCategoriesComponent } from './components/seller-categories/seller
 import { SellerPortalComponent } from './components/seller-portal/seller-portal.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
@@ -18,14 +19,13 @@ const routes: Routes = [
   { path: 'createAccount', component: UserRegisterComponent },
   { path: 'loginSeller', component: SellerLoginComponent },
   { path: 'createAccountSeller', component: SellerRegisterComponent },
-  {path: 'userPortal', component: UserPortalComponent},
-  // {path: 'viewProducts', component: ViewProductsComponent},
-  {path: 'productPage/:productId', component: ProductPageComponent},
+  { path: 'userPortal', component: UserPortalComponent },
+  // { path: 'viewProducts', component: ViewProductsComponent }, // This line is commented out; uncomment if needed
+  { path: 'productPage/:productId', component: ProductPageComponent },
   { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
-  { path: 'list', component: SellerCategoriesComponent },
-  {path: 'cart', component: CartComponent},
- 
+  { path: 'cart', component: CartComponent },
   { path: 'sellerPortal', component: SellerCategoriesComponent },
+  { path: 'orders', component: OrderHistoryComponent },
 ];
 
 @NgModule({
@@ -33,3 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
