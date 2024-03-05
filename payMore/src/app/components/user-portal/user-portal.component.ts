@@ -30,9 +30,6 @@ export class UserPortalComponent {
       this.searchShoesResult = this.products;
       return;
     } 
-    // this.searchShoesResult = this.products.filter(searchShoes => {
-    //   searchShoes?.gender.toLowerCase().includes(results.toLowerCase())
-    // })
 
     console.log(results);
 

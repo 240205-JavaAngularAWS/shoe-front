@@ -19,6 +19,8 @@
 
     <button id="registerButton" (click)="registerUser()">Register</button>
     <br />
+    <p *ngIf="errorMessage" style="color: red">{{ errorMessage }}</p>
+    <p *ngIf="successMessage" style="color: green">{{ successMessage }}</p>
     <p>
       Not a buyer? Register as Seller
       <a style="color: blue; cursor: pointer" (click)="toSellerRegister()"
