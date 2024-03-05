@@ -27,6 +27,7 @@ import { OrderHistoryComponent } from './components/order-history/order-history.
 import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderComponent } from './components/order/order.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     WriteReviewComponent,
     OrderHistoryComponent,
     ViewOrdersComponent,
-    CartComponent
+    CartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

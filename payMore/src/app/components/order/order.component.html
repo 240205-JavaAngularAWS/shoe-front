@@ -1,0 +1,9 @@
+<div *ngIf="orders.length > 0; else noOrders">
+    <ul>
+      <li *ngFor="let order of orders">
+        Order ID: {{ order.orderId }}, Total Price: {{ order.priceTotal }}, Time: {{ order.time }}
+      </li>
+    </ul>
+  </div>
+  <ng-template #noOrders>No orders found.</ng-template>
+

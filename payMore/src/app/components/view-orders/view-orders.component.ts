@@ -17,7 +17,7 @@ export class ViewOrdersComponent {
   orders: IOrder[] = []
 
   ngOnInit(){
-    this.ordersService.getOrdersByUserId()
+
 
   }
 
