@@ -14,7 +14,7 @@ export class UserLoginComponent {
   errorMessageHidden: boolean = true   
   loginUser(){
     this.authService.loginUser(this.usernameInput, this.passwordInput).subscribe((data) => {
-      sessionStorage.setItem("username", data.username)
+      sessionStorage.setItem("id", JSON.stringify(data.id))
 
       let successfulLogin: boolean = this.authService.validateLoggedIn();
 
