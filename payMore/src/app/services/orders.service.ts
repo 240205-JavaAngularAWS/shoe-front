@@ -28,6 +28,14 @@ private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'
 
   }
 
+  createNewOrder(userId: number): Observable<IOrder[]>{
+    return this.http.post<IOrder[]>(`${this.url}/orders`, this.headers);
+  }
+
+  addToOrder(userId: number): Observable<IOrder[]> {
+    return this.http.put<IOrder[]>(`${this.url}/orders`, this.headers)
+  }
+
 
 
 
