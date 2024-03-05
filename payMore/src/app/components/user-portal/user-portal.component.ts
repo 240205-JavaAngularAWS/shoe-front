@@ -18,8 +18,6 @@ export class UserPortalComponent {
     console.log($event.id);
     let id = $event.id;
     this.router.navigate([`productPage/${id}`]);
-
-    //       this.router.navigate(['userPortal']);
   }
 
   searchShoes(results: string) {
@@ -27,9 +25,22 @@ export class UserPortalComponent {
       this.searchShoesResult = this.products;
       return;
     } 
-    this.searchShoesResult = this.products.filter(searchShoes => {
-      searchShoes?.gender.toLowerCase().includes(results.toLowerCase())
-    })
+    // this.searchShoesResult = this.products.filter(searchShoes => {
+    //   searchShoes?.gender.toLowerCase().includes(results.toLowerCase())
+    // })
+
+    console.log(results);
+
+    this.productsService.findProductByKeyword(results)
+      .subscribe((data)=>{
+        this.products = data
+      });
+      this.searchShoesResult = this.products
+  }
+
+  // clears search result and refresh the page
+  clearSearchResults(){
+    location.reload();
   }
 
   products: Products[] = []
