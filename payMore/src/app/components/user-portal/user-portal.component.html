@@ -9,39 +9,39 @@
     <br>
 
     <div class="container">
-        <div>
-            <!-- search bar -->
-            <div class="row g-3">
-                <label for="search">Search Shoes: </label>
-                <div class="col">
-                    <input id="search" class="form-control" type="text" placeholder="Search by keyword" [(ngModel)]="searchInputted">
-                </div>
-                <div class="col-auto">
-                    <button type="button" class="btn btn-outline-primary" id="searchButton" (click)="searchShoes(searchInputted)">Search</button>
-                    <button type="button" class="btn btn-outline-secondary" id="clearButton" (click)="clearSearchResults()">Clear</button>
-                </div>
+        <!-- search bar -->
+        <div class="row g-3">
+            <label for="search">Search Shoes: </label>
+            <div class="col">
+                <input id="search" class="form-control" type="text" placeholder="Search by keyword" [(ngModel)]="searchInputted">
             </div>
-            <!-- filter content -->
-            <div class="row">
-                <div class="col-3">
-                    <select class="form-select" aria-label="Default select example" [(ngModel)] ="categorySelected">
-                        <option selected>Filter By:</option>
-                        <option value="ATHLETIC">Atheletic</option>
-                        <option value="CASUAL">Casual</option>
-                        <option value="DRESS">Dress</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <button type="button" class="btn btn-primary" id="filterButton" (click)="filterShoes(categorySelected)">Filter</button>
-                </div>
-            </div>
-            <!-- content -->
-            <div>
-                <p style="text-align: center; font-weight: bolder; font-size: 50px;">Products</p>
-                <div>
-                    <view-products *ngFor="let product of products" [productsInputted]="product" (viewProduct)="viewProduct($event)"></view-products>
-                </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-primary" id="searchButton" (click)="searchShoes(searchInputted)">Search</button>
+                <button type="button" class="btn btn-outline-secondary" id="clearButton" (click)="clearSearchResults()">Clear</button>
             </div>
         </div>
+        <!-- filter content -->
+        <div class="row">
+            <div class="col-3">
+                <select class="form-select" aria-label="Default select example" [(ngModel)] ="categorySelected">
+                    <option selected>Filter By:</option>
+                    <option value="ATHLETIC">Atheletic</option>
+                    <option value="CASUAL">Casual</option>
+                    <option value="DRESS">Dress</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-primary" id="filterButton" (click)="filterShoes(categorySelected)">Filter</button>
+            </div>
+        </div>
+        <!-- content -->
+        <div>
+            <!-- title for content -->
+            <p style="text-align: center; font-weight: bolder; font-size: 50px;">Products</p>
+            <div class="row">
+                <view-products class="col-sm-4 mb-3 mb-sm-0" *ngFor="let product of products" [productsInputted]="product" (viewProduct)="viewProduct($event)"></view-products>
+            </div>
+        </div>
+        <!-- end content div -->
     </div>
 </div>
