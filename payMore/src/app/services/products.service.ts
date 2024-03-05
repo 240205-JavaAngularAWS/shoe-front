@@ -7,56 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductsService {
 
-  products: Products[] = [
-    // {
-    //   id: 1,
-    //   price: 300.00,
-    //   color: "Red",
-    //   gender: "MEN",
-    //   category: "Sneakers",
-    //   quantity: 5,
-    //   seller: {
-    //     companyName: "Nike"
-    //   },
-    //   imageUrl: ""
-    // },
-    // {
-    //   id: 2,
-    //   price: 500.00,
-    //   color: "Blue",
-    //   gender: "WOMEN",
-    //   category: "Heels",
-    //   quantity: 7,
-    //   seller: {
-    //     companyName: "Air"
-    //   },
-    //   imageUrl: ""
-    // },
-    // {
-    //   id: 3,
-    //   price: 100.00,
-    //   color: "Orange",
-    //   gender: "UNISEX",
-    //   category: "Sandals",
-    //   quantity: 20,
-    //   seller: {
-    //     companyName: "Nike"
-    //   },
-    //   imageUrl: ""
-    // },
-    // {
-    //   id: 4,
-    //   price: 200.00,
-    //   color: "Purple",
-    //   gender: "MEN",
-    //   category: "Running Shoes",
-    //   quantity: 12,
-    //   seller: {
-    //     companyName: "Air"
-    //   },
-    //   imageUrl: ""
-    // }
-]
+  products: Products[] = []
 
 getAllProducts(): Observable<Products[]>{
     return this.http.get<Products[]>(`http://localhost:8080/products/all`);
