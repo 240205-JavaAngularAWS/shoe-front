@@ -4,6 +4,7 @@ import { ProductsService } from '../../services/products.service';
 import { OrdersService } from '../../services/orders.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { IOrderItem } from '../../interfaces/IOrderItem';
 
 
 @Component({
@@ -13,6 +14,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ViewProductsComponent {
 products: any[] = [];
+@Input() orders: IOrderItem = {
+  imageUrl: "",
+  price: 0,
+  quantity: 0,
+  productId: 0
+}
 
   @Input() productsInputted: Products= {
       price: 0,
@@ -31,6 +38,11 @@ products: any[] = [];
     viewProductById(){
       console.log("attempting to view item with ID: " + this.productsInputted.id);
       this.viewProduct.emit(this.productsInputted);
+    }
+
+    addToCart() {
+     console.log("Added To Cart!")
+      
     }
 
 

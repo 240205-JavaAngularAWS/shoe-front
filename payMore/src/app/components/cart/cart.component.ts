@@ -9,6 +9,8 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
+
+  SessionStorageLength: number = sessionStorage.length;
   products: Products[] = [
     {
       price: 0,
