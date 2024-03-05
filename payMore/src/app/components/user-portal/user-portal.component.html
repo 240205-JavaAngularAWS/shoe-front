@@ -15,7 +15,7 @@
             <!-- filter content -->
             <div class="row">
                 <div class="col-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" [(ngModel)] ="categorySelected">
                         <option selected>Filter By:</option>
                         <option value="ATHLETIC">Atheletic</option>
                         <option value="CASUAL">Casual</option>
@@ -23,7 +23,7 @@
                     </select>
                 </div>
                 <div class="col-auto">
-                    <button>Filter</button>
+                    <button type="button" id="filterButton" (click)="filterShoes(categorySelected)">Filter</button>
                 </div>
             </div>
             <!-- content -->
