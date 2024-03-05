@@ -3,8 +3,8 @@ import { IOrderItem } from "./IOrderItem";
 
 
 export interface IOrder {
-    orderId: number,
+    id: number,
     priceTotal: number,
-    time: string,
+    timestamp: string,
     orderItems: IOrderItem[]
 }

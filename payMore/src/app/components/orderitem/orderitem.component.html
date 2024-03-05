@@ -1,5 +1,5 @@
-<div class="orderitem">
-<p>{{this.productId}}</p>
-<p>{{this.orderItemInput}}</p>
-<p>{{this.quantity}}</p>
-</div>
+<div *ngFor="let item of order.orderItems">
+    <p>Item ID: {{item.productId}}</p>
+    <p>Item Quantity: {{item.quantity}}</p>
+    <p>Item Price: {{item.price}}</p>
+  </div>

@@ -18,19 +18,27 @@ constructor(private ordersService: OrdersService, private activateRoute: Activat
 }
 
 loadOrders(userId: number): void {
-  this.ordersService.getOrdersByUserId(userId).subscribe((data) => {
-    console.log(data);
-  this.orders = data;
-
-})
+  this.ordersService.getOrdersByUserId(userId).subscribe((orders) => {
+    this.orders = orders;
+    this.orders.forEach(order => {
+      order.orderItems.forEach(item => {
+        this.ordersService.getProductInfo(item.productId).pipe(
+        ).subscribe(url => {
+          item.imageUrl = url.imageUrl; // Add pictureUrl property dynamically
+        });
+      });
+    });
+  });
 }
 
 
 ngOnInit(){
-  let userId : number = 4;
+  let userId : number = 5;
   this.loadOrders(userId);
+  console.log(`Orders" ${this.orders}`);
 
-  console.log(userId);
+
+
 
 
 

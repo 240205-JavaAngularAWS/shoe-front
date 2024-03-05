@@ -8,6 +8,7 @@ import { IOrderItem } from '../../interfaces/IOrderItem';
 })
 export class OrderitemComponent {
 
+  orderItems: IOrderItem[] = []; 
 
   @Input() orderItemInput: IOrderItem = {
     price: 0,
