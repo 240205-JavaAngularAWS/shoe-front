@@ -1,25 +1,48 @@
 <div class="checkout-form">
     <h2>Checkout</h2>
   
+    <!-- Placed Orders -->
     <div class="placed-orders">
       <h3>Placed Orders</h3>
-      <!-- Display placed orders here -->
-      <!-- You can use Angular ngFor directive to loop through placed orders -->
-      <!-- Example: <div *ngFor="let order of placedOrders">{{ order }}</div> -->
+      <ul>
+        <li *ngFor="let order of placedOrders">{{ order }}</li>
+      </ul>
     </div>
   
     <!-- Billing Information Form -->
     <div class="billing-info">
       <h3>Billing Information</h3>
-      <!-- Create a form for billing information -->
-      <!-- You can use Angular forms to handle form submission -->
+      <form (ngSubmit)="submitCheckout()">
+        <div>
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" [(ngModel)]="billingInfo.fullName" name="fullName" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" [(ngModel)]="billingInfo.email" name="email" required>
+        </div>
+        <!-- Add more form fields for billing information as needed -->
+  
+        <button type="submit">Submit Billing Information</button>
+      </form>
     </div>
   
     <!-- Credit Card Information Form -->
     <div class="credit-card-info">
       <h3>Credit Card Information</h3>
-      <!-- Create a form for credit card information -->
-      <!-- You can use Angular forms to handle form submission -->
+      <form (ngSubmit)="submitCheckout()">
+        <div>
+          <label for="cardNumber">Credit Card Number:</label>
+          <input type="text" id="cardNumber" [(ngModel)]="creditCardInfo.cardNumber" name="cardNumber" required>
+        </div>
+        <div>
+          <label for="expiryDate">Expiry Date:</label>
+          <input type="text" id="expiryDate" [(ngModel)]="creditCardInfo.expiryDate" name="expiryDate" required>
+        </div>
+        <!-- Add more form fields for credit card information as needed -->
+  
+        <button type="submit">Submit Credit Card Information</button>
+      </form>
     </div>
   
     <!-- Submit Button -->

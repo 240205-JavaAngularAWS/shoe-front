@@ -25,6 +25,8 @@ import { SellerIconComponent } from './components/seller-icon/seller-icon.compon
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CheckoutFormComponent } from './components/checkout-form/checkout-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CheckoutService } from './services/checkout.service';
+
 
 
 @NgModule({
@@ -50,6 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProductPageComponent,
     WriteReviewComponent,
     CheckoutFormComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule, 
     HttpClientModule
   ],
-  providers: [],
+  providers: [CheckoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
