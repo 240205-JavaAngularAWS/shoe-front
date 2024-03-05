@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class UserPortalComponent {
 
-  searchInputted: string = ""
+  searchInputted: string = "";
+
+  categorySelected: string = "";
 
   searchShoesResult: Products[] = []
 
@@ -20,6 +22,7 @@ export class UserPortalComponent {
     this.router.navigate([`productPage/${id}`]);
   }
 
+  // search shoe by keywprd
   searchShoes(results: string) {
     if(!results) {
       this.searchShoesResult = this.products;
@@ -35,12 +38,26 @@ export class UserPortalComponent {
       .subscribe((data)=>{
         this.products = data
       });
-      this.searchShoesResult = this.products
+      this.searchShoesResult = this.products;
   }
 
   // clears search result and refresh the page
   clearSearchResults(){
     location.reload();
+  }
+
+  // filter shoes by category
+  filterShoes(category: string){
+    console.log(category);
+    if(!category) {
+      this.searchShoesResult = this.products;
+      return;
+    }
+    this.productsService.findProductByCategory(category)
+      .subscribe((data)=>{
+        this.products = data
+      });
+      this.searchShoesResult = this.products;
   }
 
   products: Products[] = []
