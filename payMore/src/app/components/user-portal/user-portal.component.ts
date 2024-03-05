@@ -38,6 +38,11 @@ export class UserPortalComponent {
       this.searchShoesResult = this.products
   }
 
+  // clears search result and refresh the page
+  clearSearchResults(){
+    location.reload();
+  }
+
   products: Products[] = []
   constructor(private productsService: ProductsService, private router: Router) {
   }
