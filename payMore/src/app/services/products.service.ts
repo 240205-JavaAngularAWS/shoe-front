@@ -10,7 +10,11 @@ export class ProductsService {
   products: Products[] = []
 
 getAllProducts(): Observable<Products[]>{
-    return this.http.get<Products[]>(`http://localhost:8080/products/all`);
+  return this.http.get<Products[]>(`http://localhost:8080/products/all`);
+}
+
+findProductByKeyword(keyword: string): Observable<Products[]>{
+  return this.http.get<Products[]>(`http://localhost:8080/products/searchBy?keyword=${keyword}`);
 }
 
 
