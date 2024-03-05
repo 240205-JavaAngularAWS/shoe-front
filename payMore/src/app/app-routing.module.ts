@@ -23,7 +23,7 @@ const routes: Routes = [
   // { path: 'viewProducts', component: ViewProductsComponent }, // This line is commented out; uncomment if needed
   { path: 'productPage/:productId', component: ProductPageComponent },
   { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
-  { path: 'list', component: SellerCategoriesComponent },
+  // { path: 'list', component: SellerCategoriesComponent },
   { path: 'cart', component: CartComponent },
   { path: 'sellerPortal', component: SellerCategoriesComponent },
   { path: 'orders', component: OrderHistoryComponent },

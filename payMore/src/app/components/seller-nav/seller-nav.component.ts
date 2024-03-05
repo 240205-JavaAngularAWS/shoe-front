@@ -10,7 +10,7 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 export class SellerNavComponent {
 
   toLogin(){
-    this.router.navigate(['loginUser']);
+    this.router.navigate(['loginSeller']);
     sessionStorage.clear();
   }
 
