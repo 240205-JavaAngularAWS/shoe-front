@@ -4,9 +4,9 @@
     <div class="container">
         <div>
             <div>
-                <label for="search" style="margin-left: 400px; font-weight: bold;">Search Shoes: </label>
-                <input type="text" placeholder="Filter" style="margin-left: 10px;" [(ngModel)]="searchInputted">
-                <button type="button" id="searchButton" style="margin-left: 5px;" (click)="searchShoes(searchInputted)">Search</button>
+                <label for="search" style="font-weight: bold;">Search Shoes: </label>
+                <input type="text" placeholder="Filter" [(ngModel)]="searchInputted">
+                <button type="button" id="searchButton" (click)="searchShoes(searchInputted)">Search</button>
                 <button type="button" id="clearButton" (click)="clearSearchResults()">Clear</button>
             </div>
             <div>
