@@ -74,9 +74,10 @@ constructor (private productService: ProductsService) {}
 
   ngOnInit() {
 
-    this.productService.getAllProducts()
-    .subscribe((data)=>{
-      this.products = data
+    let one = 1;
+    
+    this.productService.findProductBySellerId(one).subscribe((data) => {
+      this.products = data;
     });
   }
 }

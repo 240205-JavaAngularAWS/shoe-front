@@ -14,7 +14,7 @@ export class SellerLoginComponent {
   
   loginSeller(){
     this.authService.loginSeller(this.usernameInput, this.passwordInput).subscribe((data) => {
-      sessionStorage.setItem("username", data.username)
+      sessionStorage.setItem("id", JSON.stringify(data.id))
 
       let successfulLogin: boolean = this.authService.validateLoggedIn();
 

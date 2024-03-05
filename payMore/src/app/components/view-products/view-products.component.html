@@ -1,19 +1,20 @@
-<div id="row">
-    <div id="column">
-        <div id="card">
-    <p>Price: {{this.productsInputted.price}}</p>
-    <p>Color: {{this.productsInputted.color}}</p>
-    <p>Gender: {{this.productsInputted.gender}}</p>
-    <p>Quantity: {{this.productsInputted.quantity}}</p>
-    <p>Category: {{this.productsInputted.category}}</p>
-    <p>Brand: {{this.productsInputted.seller.companyName}}</p>
-    <img src={{this.productsInputted.imageUrl}} alt="Shoe Picture Here">
-    <br>
-    <button (click)="viewProductById()">view</button>
-    <br>
-    <br>
-    <button type="button" id="buyButton" style="font-family: 'Courier New', Courier, monospace;">Buy Now!</button>
-    <button type="button" id="cartButton" style="font-family: 'Courier New', Courier, monospace;">Add to Cart</button>
+
+<div class="card">
+    <div>
+        <div class="card-body">
+            <p class="card-text">Price: {{this.productsInputted.price}}</p>
+            <p class="card-text">Color: {{this.productsInputted.color}}</p>
+            <p class="card-text">Gender: {{this.productsInputted.gender}}</p>
+            <p class="card-text">Quantity: {{this.productsInputted.quantity}}</p>
+            <p class="card-text">Category: {{this.productsInputted.category}}</p>
+            <p class="card-text">Brand: {{this.productsInputted.seller.companyName}}</p>
+            <img class="card-img-top" src={{this.productsInputted.imageUrl}} alt="Shoe Picture Here">
+            <br>
+            <button class="btn btn-outline-secondary" (click)="viewProductById()">view</button>
+            <br>
+            <br>
+            <button class="btn btn-outline-warning" type="button" id="buyButton">Buy Now!</button>
+            <button class="btn btn-outline-success" type="button" id="cartButton">Add to Cart</button>
        </div>
     </div>
 </div>
