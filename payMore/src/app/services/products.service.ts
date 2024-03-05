@@ -17,6 +17,10 @@ findProductByKeyword(keyword: string): Observable<Products[]>{
   return this.http.get<Products[]>(`http://localhost:8080/products/searchBy?keyword=${keyword}`);
 }
 
+findProductByCategory(category: string): Observable<Products[]>{
+  return this.http.get<Products[]>(`http://localhost:8080/products/filterBy?category=${category}`);
+}
+
 
 getProductById(productId: number): Products{
   
