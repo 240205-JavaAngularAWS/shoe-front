@@ -24,6 +24,7 @@ import { SellerCategoriesComponent } from './components/seller-categories/seller
 import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CheckoutFormComponent } from './components/checkout-form/checkout-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { CheckoutFormComponent } from './components/checkout-form/checkout-form.
     AppRoutingModule,
     NgbModule,
     NgbRatingModule,
-    FormsModule
+    FormsModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,28 @@
-<p>checkout-form works!</p>
+<div class="checkout-form">
+    <h2>Checkout</h2>
+  
+    <div class="placed-orders">
+      <h3>Placed Orders</h3>
+      <!-- Display placed orders here -->
+      <!-- You can use Angular ngFor directive to loop through placed orders -->
+      <!-- Example: <div *ngFor="let order of placedOrders">{{ order }}</div> -->
+    </div>
+  
+    <!-- Billing Information Form -->
+    <div class="billing-info">
+      <h3>Billing Information</h3>
+      <!-- Create a form for billing information -->
+      <!-- You can use Angular forms to handle form submission -->
+    </div>
+  
+    <!-- Credit Card Information Form -->
+    <div class="credit-card-info">
+      <h3>Credit Card Information</h3>
+      <!-- Create a form for credit card information -->
+      <!-- You can use Angular forms to handle form submission -->
+    </div>
+  
+    <!-- Submit Button -->
+    <button (click)="submitCheckout()">Submit Checkout</button>
+  </div>
+  

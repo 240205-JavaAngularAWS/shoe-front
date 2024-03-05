@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './checkout-form.component.css'
 })
 export class CheckoutFormComponent {
+  
+submitCheckout() {
+throw new Error('Method not implemented.');
+}
 
 }
