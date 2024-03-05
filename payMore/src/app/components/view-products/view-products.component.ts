@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Products } from '../../interfaces/products';
 import { ProductsService } from '../../services/products.service';
+import { OrdersService } from '../../services/orders.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -32,22 +33,9 @@ products: any[] = [];
       this.viewProduct.emit(this.productsInputted);
     }
 
-    addToCart(product: any) {
-      console.log(product);
-      if(sessionStorage.getItem('username')) {
-        if(!this.productService.productInCart(product)) {
-          product.quantity += 1;
-          this.productService.addToCart(product);
-          
-        }
-      } else {
-        this.router.navigate(['loginUser'])
-      }
-    }
 
     constructor(private productService: ProductsService,
-       private router: Router,
-       private http: HttpClient) {
+       private router: Router) {
 
     }
   }
