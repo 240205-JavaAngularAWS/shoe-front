@@ -4,6 +4,7 @@ import { ProductsService } from '../../services/products.service';
 import { OrdersService } from '../../services/orders.service';
 import { Router } from '@angular/router';
 import { IOrder } from '../../interfaces/IOrder';
+import { IOrderItem } from '../../interfaces/IOrderItem';
 
 
 @Component({
@@ -15,7 +16,12 @@ export class ViewProductsComponent {
 products: any[] = [];
 
 orders: IOrder[] = [];
-
+orderItem: IOrderItem = {
+  orderId: 0,
+  price: 0,
+  quantity: 0,
+  productId: 0
+};
 newCart: IOrder = {
   priceTotal: 0,
   status: "PENDING",
@@ -50,19 +56,28 @@ newCart: IOrder = {
        }
        // Now, we will implement functionality to addToCart
        this.orderService.getCartByUserId(this.userId).subscribe((data) => {
-        this.orders = data;
-        console.log(this.orders);
+        if(data.length > 0) {
+          let productId: (number | null);
+          let orderId: (number | undefined);
+          // Null checking product Id
+          productId = this.productsInputted.id ? this.productsInputted.id : 0;
+          orderId = data[0] ? data[0].id : 0;
+          console.log("Exists");
+          // setting the values of orderItems 
+          this.orderItem.price = this.productsInputted.price;
+          this.orderItem.quantity++;
+          this.orderItem.productId = productId;
+          this.orderItem.orderId = orderId;
+          // Calling addItemToCart to add to cart 
+          this.orderService.addItemtoCart(this.orderItem).subscribe((data) => {
+            console.log(data);
+          })
+        } else {
+          this.orderService.registerCart(this.newCart).subscribe((data) => {
+            console.log("Cart Created");
+          })
+        }
        });
-       if(this.orders) {
-        console.log("Cart Created!");
-        this.orderService.registerCart(this.newCart).subscribe((data) => {
-          this.orders = data;
-        })
-       } else {
-        console.log("Added to Cart");
-       }
-
-
     };
 
 
@@ -82,64 +97,3 @@ newCart: IOrder = {
     this.router.navigate(['/checkout']);
   };
 }
-
-
-
-// orderId: IOrder = {
-//   id: 0,
-//   priceTotal: 0,
-//   status: "",
-//   timestamp: "",
-//   orderItems: [],
-//   userId: 0
-// }
-
-
-
-
-// orders: IOrderItem = {
-//   productName: '',
-//   imageUrl: '',
-//   price: 0,
-//   quantity: 0,
-//   productId: 0
-// };
-
-// IaddToCart: IAddToCart = {
-//   price: 0,
-//   quantity: 0,
-//   orderId: 0,
-//   productId: 0
-// }
-
-
-
-// cart: ICart = {
-//   priceTotal: 0,
-//   status: '',
-//   userId: 0
-// };
-
-
-
-      // // console.log(this.orderId)
-      // if(!sessionStorage.getItem("id")) {
-      //   this.router.navigate(['loginUser']);
-      //  }
-      // //  console.log(this.orderId);
-      // //  console.log(this.productsInputted.id);
-      //   if(this.orderId.status == 'PENDING') {
-      //     console.log("Success!");
-      //     this.IaddToCart.productId = this.productsInputted.id;
-      //     console.log(this.IaddToCart);
-      //     console.log(this.orderId);
-      //     // this.orderService.addToOrder(this.IaddToCart).subscribe
-      //     // this.IaddToCart.orderId = this.cart
-      //   } else {
-      //     // console.log(this.cart)
-      //     this.orderService.createNewOrder(this.cart).subscribe((data) => {
-      //       console.log("Cart Created!");
-      //       this.orderId = data;
-      //       console.log(this.orderId);
-      //     })
-      //   }
