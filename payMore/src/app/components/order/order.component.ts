@@ -28,6 +28,7 @@ loadOrders(userId: number): void {
         
         this.ordersService.getProductInfo(item.productId).pipe(
         ).subscribe(url => {
+          item.productName = url.productName;
           item.imageUrl = url.imageUrl; // Add pictureUrl property dynamically
         });
       });
