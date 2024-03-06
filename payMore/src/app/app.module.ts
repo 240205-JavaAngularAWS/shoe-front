@@ -28,8 +28,10 @@ import { ViewOrdersComponent } from './components/view-orders/view-orders.compon
 import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderComponent } from './components/order/order.component';
+import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { CheckoutService } from './services/checkout.service';
 import { CheckoutComponent } from './components/checkout-form/checkout-form.component';
+
 
 
 
@@ -65,8 +67,8 @@ import { CheckoutComponent } from './components/checkout-form/checkout-form.comp
     ViewOrdersComponent,
     CartComponent,
     OrderComponent,
+    CartProductsComponent,
     CheckoutComponent
-
   ],
   imports: [
     BrowserModule,

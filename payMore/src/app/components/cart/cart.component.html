@@ -8,9 +8,16 @@
 
     <br>
  
-
-    <div class="container">
-        
+    <div *ngIf="orders.length > 0; else noProducts" class="orders-container">
+        <div class="container">
+            <cart-products></cart-products>
+        </div>
     </div>
+
+
+    <ng-template #noProducts>
+        <div class="no-products">No items in cart.</div>
+      </ng-template>
+    
 
 
