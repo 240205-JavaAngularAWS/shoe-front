@@ -12,7 +12,7 @@ import { SellerLoginComponent } from './components/seller-login/seller-login.com
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
 import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { WriteReviewComponent } from './components/write-review/write-review.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
@@ -23,18 +23,20 @@ import { SellerProductComponent } from './components/seller-product/seller-produ
 import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
 import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
-<<<<<<< HEAD
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderComponent } from './components/order/order.component';
-=======
-import { CheckoutComponent } from './components/checkout-form/checkout-form.component';
-import { HttpClientModule } from '@angular/common/http';
 import { CheckoutService } from './services/checkout.service';
+import { CheckoutComponent } from './components/checkout-form/checkout-form.component';
 
->>>>>>> origin/naodBranch
+
+
+
+
+
+
 
 
 @NgModule({
@@ -59,28 +61,21 @@ import { CheckoutService } from './services/checkout.service';
     SellerIconComponent,
     ProductPageComponent,
     WriteReviewComponent,
-<<<<<<< HEAD
     OrderHistoryComponent,
     ViewOrdersComponent,
     CartComponent,
-    OrderComponent
-=======
+    OrderComponent,
     CheckoutComponent
-   
-   
->>>>>>> origin/naodBranch
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     NgbRatingModule,
-<<<<<<< HEAD
-    FormsModule,
-=======
     FormsModule, 
->>>>>>> origin/naodBranch
     HttpClientModule
+    
   ],
   providers: [CheckoutService],
   bootstrap: [AppComponent]
