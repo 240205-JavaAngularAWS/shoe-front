@@ -19,6 +19,7 @@ products: any[] = [];
 orders: IOrderItem[] = [];
 
   @Input() productsInputted: Products= {
+      productName: '',
       price: 0,
       color: '',
       gender: '',

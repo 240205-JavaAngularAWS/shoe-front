@@ -11,19 +11,16 @@ import { ProductsService } from '../../services/products.service';
 export class SellerCategoriesComponent {
 
   products: Products[] = [];
-  // counter: number = 5;
   newProductName: string = '';
   newPrice: number = 0;
   newColor: string = '';
   newGender: string = '';
   newCategory: string = '';
   newQuantity: number = 0;
-  // newSeller: Seller = { companyName: '' };
   newImage: string = '';
   newDescription: string = '';
   errorMessage: string = '';
   successMessage: string = '';
-  // hide: boolean = true;
 
   constructor (private productService: ProductsService) {}
 

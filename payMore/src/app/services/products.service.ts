@@ -45,6 +45,7 @@ export class ProductsService {
 
 
     return {
+      productName: '',
       price: 0,
       color: undefined,
       gender: undefined,
@@ -52,6 +53,7 @@ export class ProductsService {
       quantity: 0,
       seller: {},
       imageUrl: '',
+      description: ''
     };
   }
 
