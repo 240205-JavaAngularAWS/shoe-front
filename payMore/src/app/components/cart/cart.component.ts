@@ -12,16 +12,5 @@ import { IOrderItem } from '../../interfaces/IOrderItem';
 export class CartComponent {
   orders: IOrderItem[] = [];
   SessionStorageLength: number = sessionStorage.length;
-  products: Products[] = [
-    {
-      price: 0,
-      color: "",
-      gender: "",
-      category: "",
-      quantity: 0,
-      seller: {},
-      imageUrl: ''
-    }
-  ];
 
 }
