@@ -21,9 +21,15 @@ private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'
 
   getOrdersByUserId(userId : number): Observable<IOrder[]>{
     return this.http.get<IOrder[]>(`${this.url}/orders/filterBy?userId=${userId}&status=COMPLETED`, this.headers)
-
-
       // Subscribe on the component side.
+  }
+
+
+  // redundant, but added due to time crunch
+  getCartByUserId(userId: number): Observable<IOrder[]>{
+    // will return as list, even though there is only one cart.
+    return this.http.get<IOrder[]>(`${this.url}/orders/filterBy?userId=${userId}&status=PENDING`, this.headers)
+
   }
 
   getProductInfo(productId: number): Observable<Products>{
@@ -67,6 +73,8 @@ private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'
     return this.http.post<IOrder>(`${this.url}/orders/submit?orderId=${orderId}`, this.headers)
 
   }
+
+
 
 
 
