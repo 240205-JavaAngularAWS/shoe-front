@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { IOrder } from '../interfaces/IOrder';
 import { Products } from '../interfaces/products';
 import { IOrderItem } from '../interfaces/IOrderItem';
+import { ICart } from '../interfaces/ICart';
+import { IAddToCart } from '../interfaces/IAddToCart';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,12 +31,12 @@ private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'
 
   }
 
-  createNewOrder(): Observable<IOrderItem[]>{
-    return this.http.post<IOrderItem[]>(`${this.url}/orders`, this.headers);
+  createNewOrder(cart: ICart): Observable<IOrder>{
+    return this.http.post<IOrder>(`${this.url}/orders`, cart, this.headers);
   }
 
-  addToOrder(): Observable<IOrderItem[]> {
-    return this.http.put<IOrderItem[]>(`${this.url}/orders`, this.headers)
+  addToOrder(iAddtoCart: IAddToCart): Observable<IOrder[]> {
+    return this.http.put<IOrder[]>(`${this.url}/orders`, iAddtoCart, this.headers)
   }
 
 

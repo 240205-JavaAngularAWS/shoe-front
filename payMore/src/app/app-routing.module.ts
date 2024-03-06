@@ -21,16 +21,17 @@ const routes: Routes = [
   { path: 'createAccount', component: UserRegisterComponent },
   { path: 'loginSeller', component: SellerLoginComponent },
   { path: 'createAccountSeller', component: SellerRegisterComponent },
-  { path: 'userPortal', component: UserPortalComponent },
+  { path: 'userPortal/status=PENDING', component: UserPortalComponent },
   // { path: 'viewProducts', component: ViewProductsComponent }, // This line is commented out; uncomment if needed
   { path: 'productPage/:productId', component: ProductPageComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
+  { path: '', pathMatch: 'full', redirectTo: 'userPortal'},
   { path: 'cart', component: CartComponent },
   { path: 'sellerPortal', component: SellerCategoriesComponent },
   { path: 'orders', component: OrderHistoryComponent },
 
   { path: 'sellerPortals', component: SellerPortalComponent },
-  { path: 'checkout', component: CheckoutComponent }
+  { path: 'checkout', component: CheckoutComponent },
+  {path: 'userPortal', component: UserPortalComponent},
 
 
 ];

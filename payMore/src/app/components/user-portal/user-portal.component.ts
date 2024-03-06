@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Products } from '../../interfaces/products';
 import { Router } from '@angular/router';
-
+import { IOrder } from '../../interfaces/IOrder';
 @Component({
   selector: 'app-user-portal',
   templateUrl: './user-portal.component.html',
@@ -17,7 +17,6 @@ export class UserPortalComponent {
   categorySelected: string = "";
 
   searchShoesResult: Products[] = []
-
   viewProduct($event: Products){
     console.log($event.id);
     let id = $event.id;
@@ -69,6 +68,12 @@ export class UserPortalComponent {
         this.products = data
       });
     this.searchShoesResult = this.products
+    if(this.router.url.includes('status=PENDING')) {
+
+    } else {
+      
+      console.log(this.router.url);
+    }
   }
 
 }
