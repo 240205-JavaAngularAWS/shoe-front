@@ -14,12 +14,7 @@ import { IOrderItem } from '../../interfaces/IOrderItem';
 })
 export class ViewProductsComponent {
 products: any[] = [];
-@Input() orders: IOrderItem = {
-  imageUrl: "",
-  price: 0,
-  quantity: 0,
-  productId: 0
-}
+orders: IOrderItem[] = [];
 
   @Input() productsInputted: Products= {
       price: 0,
@@ -41,13 +36,24 @@ products: any[] = [];
     }
 
     addToCart() {
-     console.log("Added To Cart!")
-      
+     if(!sessionStorage.getItem("id")) {
+      this.router.navigate(['loginUser']);
+     }else {
+      if(this.router.url.includes('status=PENDING')) {
+        console.log("Success!")
+        this.orderService.addToOrder().subscribe((data) => {
+          this.orders = data;
+        })
+      } else {
+
+      }
+     }
     }
 
 
     constructor(private productService: ProductsService,
-       private router: Router) {
+       private router: Router,
+       private orderService: OrdersService) {
 
     }
   }
