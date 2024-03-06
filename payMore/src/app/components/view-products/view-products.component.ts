@@ -1,11 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Products } from '../../interfaces/products';
+<<<<<<< HEAD
 import { ProductsService } from '../../services/products.service';
 import { OrdersService } from '../../services/orders.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { IOrderItem } from '../../interfaces/IOrderItem';
 
+=======
+import { Route, Router } from '@angular/router';
+>>>>>>> origin/naodBranch
 
 @Component({
   selector: 'view-products',
@@ -28,6 +32,10 @@ orders: IOrderItem[] = [];
       imageUrl: ''
     }
 
+    constructor(private router : Router){
+
+    }
+
     @Output() viewProduct = new EventEmitter();
 
     viewProductById(){
@@ -35,6 +43,7 @@ orders: IOrderItem[] = [];
       this.viewProduct.emit(this.productsInputted);
     }
 
+<<<<<<< HEAD
     addToCart() {
      if(!sessionStorage.getItem("id")) {
       this.router.navigate(['loginUser']);
@@ -55,5 +64,9 @@ orders: IOrderItem[] = [];
        private router: Router,
        private orderService: OrdersService) {
 
+=======
+    checkout(){
+      this.router.navigate(['/checkout'])
+>>>>>>> origin/naodBranch
     }
   }

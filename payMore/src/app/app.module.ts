@@ -23,11 +23,18 @@ import { SellerProductComponent } from './components/seller-product/seller-produ
 import { SellerCategoriesComponent } from './components/seller-categories/seller-categories.component';
 import { SellerIconComponent } from './components/seller-icon/seller-icon.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+<<<<<<< HEAD
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderComponent } from './components/order/order.component';
+=======
+import { CheckoutComponent } from './components/checkout-form/checkout-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CheckoutService } from './services/checkout.service';
+
+>>>>>>> origin/naodBranch
 
 
 @NgModule({
@@ -52,20 +59,30 @@ import { OrderComponent } from './components/order/order.component';
     SellerIconComponent,
     ProductPageComponent,
     WriteReviewComponent,
+<<<<<<< HEAD
     OrderHistoryComponent,
     ViewOrdersComponent,
     CartComponent,
     OrderComponent
+=======
+    CheckoutComponent
+   
+   
+>>>>>>> origin/naodBranch
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     NgbRatingModule,
+<<<<<<< HEAD
     FormsModule,
+=======
+    FormsModule, 
+>>>>>>> origin/naodBranch
     HttpClientModule
   ],
-  providers: [],
+  providers: [CheckoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

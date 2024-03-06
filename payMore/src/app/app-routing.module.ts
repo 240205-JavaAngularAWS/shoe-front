@@ -11,8 +11,12 @@ import { SellerCategoriesComponent } from './components/seller-categories/seller
 import { SellerPortalComponent } from './components/seller-portal/seller-portal.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+<<<<<<< HEAD
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { CartComponent } from './components/cart/cart.component';
+=======
+import { CheckoutComponent } from './components/checkout-form/checkout-form.component';
+>>>>>>> origin/naodBranch
 
 const routes: Routes = [
   { path: 'loginUser', component: UserLoginComponent },
@@ -25,7 +29,13 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'userPortal' },
   { path: 'cart', component: CartComponent },
   { path: 'sellerPortal', component: SellerCategoriesComponent },
+<<<<<<< HEAD
   { path: 'orders', component: OrderHistoryComponent },
+=======
+  { path: 'sellerPortals', component: SellerPortalComponent },
+  { path: 'checkout', component: CheckoutComponent }
+
+>>>>>>> origin/naodBranch
 ];
 
 @NgModule({
