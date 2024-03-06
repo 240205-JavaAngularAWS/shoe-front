@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IOrder } from '../interfaces/IOrder';
 import { Products } from '../interfaces/products';
-
+import { IOrderItem } from '../interfaces/IOrderItem';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,12 +29,12 @@ private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'
 
   }
 
-  createNewOrder(userId: number): Observable<IOrder[]>{
-    return this.http.post<IOrder[]>(`${this.url}/orders`, this.headers);
+  createNewOrder(): Observable<IOrderItem[]>{
+    return this.http.post<IOrderItem[]>(`${this.url}/orders`, this.headers);
   }
 
-  addToOrder(userId: number): Observable<IOrder[]> {
-    return this.http.put<IOrder[]>(`${this.url}/orders`, this.headers)
+  addToOrder(): Observable<IOrderItem[]> {
+    return this.http.put<IOrderItem[]>(`${this.url}/orders`, this.headers)
   }
 
 
