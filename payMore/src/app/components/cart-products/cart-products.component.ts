@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IOrderItem } from '../../interfaces/IOrderItem';
-
+import { IOrder } from '../../interfaces/IOrder';
 @Component({
   selector: 'cart-products',
   templateUrl: './cart-products.component.html',
