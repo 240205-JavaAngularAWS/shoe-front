@@ -8,6 +8,11 @@ import { Observable } from 'rxjs';
 export class ProductsService {
   products: Products[] = [];
 
+  addProduct(product: Products): Observable<Products> {
+    // Assuming the backend expects the product object in the request body and returns the added product
+    return this.http.post<Products>(`http://localhost:8080/products`, product);
+  }
+
   getAllProducts(): Observable<Products[]> {
     return this.http.get<Products[]>(`http://localhost:8080/products/all`);
   }
@@ -36,6 +41,8 @@ export class ProductsService {
         return product;
       }
     }
+
+
 
     return {
       price: 0,
