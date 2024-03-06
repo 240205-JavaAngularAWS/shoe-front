@@ -38,16 +38,23 @@ orders: IOrderItem[] = [];
     addToCart() {
      if(!sessionStorage.getItem("id")) {
       this.router.navigate(['loginUser']);
-     }else {
+     }
       if(this.router.url.includes('status=PENDING')) {
         console.log("Success!")
         this.orderService.addToOrder().subscribe((data) => {
           this.orders = data;
+          this.orders.forEach(item => {
+            this.orderService.getProductInfo(item.productId).pipe()
+            .subscribe(url => {
+              item.imageUrl = url.imageUrl
+            })
+          })
         })
       } else {
-
+        this.orderService.createNewOrder().subscribe((data) => {
+          
+        })
       }
-     }
     }
 
 
