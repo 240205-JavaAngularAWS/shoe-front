@@ -1,8 +1,36 @@
-#checkoutForms{
+.checkout{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 10vh; 
     font-family: Arial, sans-serif;
+}
+
+.col-md-6{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #f1f1f1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 50px;
+    
+}
+
+.col-lg-4{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #f1f1f1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.checkout-btn{
+   
+    margin: 50px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+   
 }
