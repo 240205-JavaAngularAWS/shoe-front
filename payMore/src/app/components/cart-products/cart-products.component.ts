@@ -13,7 +13,16 @@ export class CartProductsComponent {
 userId: number = Number(sessionStorage.getItem("id"));
 
 
-orderItem: IOrderItem[] = [];
+orderItem: IOrderItem[] = [
+  {
+  orderId: 0,
+  productName: "",
+  imageUrl: "",
+  price: 0,
+  quantity: 0,
+  productId: 0
+  }
+];
 
 
 
@@ -30,6 +39,17 @@ orders: IOrder[] = [
   ngOnInit() {
     this.orderService.getCartByUserId(this.userId).subscribe((data) => {
       this.orders = data;
+      this.orders.forEach(order => {
+      
+        order.orderItems.forEach(item => {
+          
+          this.orderService.getProductInfo(item.productId).pipe(
+          ).subscribe(url => {
+            item.productName = url.productName;
+            item.imageUrl = url.imageUrl; // Add pictureUrl property dynamically
+          });
+        });
+      });
     });
   }
 }
