@@ -13,6 +13,8 @@ import { IOrderItem } from '../../interfaces/IOrderItem';
   styleUrl: './view-products.component.css'
 })
 export class ViewProductsComponent {
+existingOrderId: number = 0; 
+
 products: any[] = [];
 
 orders: IOrder[] = [];
@@ -75,7 +77,22 @@ newCart: IOrder = {
           })
         } else {
           this.orderService.registerCart(this.newCart).subscribe((data) => {
+            console.log(data);
             console.log("Cart Created");
+            let productId: (number | null);
+            let orderId: (number | undefined);
+            // Null checking product Id
+            productId = this.productsInputted.id ? this.productsInputted.id : 0;
+            orderId = data.id;
+            // setting the values of orderItems 
+            this.orderItem.price = this.productsInputted.price;
+            this.orderItem.quantity++;
+            this.orderItem.productId = productId;
+            this.orderItem.orderId = orderId;
+            // Calling addItemToCart to add to cart 
+            this.orderService.addItemtoCart(this.orderItem).subscribe((data) => {
+              console.log(data);
+            })
           })
         }
        });
