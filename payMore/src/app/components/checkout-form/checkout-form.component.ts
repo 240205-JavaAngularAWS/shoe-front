@@ -21,7 +21,7 @@ export class CheckoutComponent implements OnInit{
       creditCardNumber: this.creditCardNumber,
       expirationDate: this.expirationDate,
       securityCode: this.securityCode,
-      // You can include other credit card fields here
+     
     };
 
     // Call the service method to submit the checkout data
@@ -33,13 +33,13 @@ export class CheckoutComponent implements OnInit{
         },
         (error) => {
           console.error('Error submitting order:', error);
-          // Handle error response
+          
         }
       );
   }
 
   ngOnInit() {
-    // Fetching order details from the backend when the component initializes
+   
     this.checkoutService.getOrderDetails(this.userId).subscribe(
       (response) => {
         this.orderDetails = response;
