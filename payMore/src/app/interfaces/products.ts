@@ -2,6 +2,7 @@ import { Seller } from "./seller";
 
 export interface Products {
     id ?: number;
+    productName?: string;
     price: number;
     color: any;
     gender: any;

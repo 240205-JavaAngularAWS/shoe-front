@@ -26,6 +26,10 @@ export class UserNavComponent {
     this.router.navigate(['cart']);
   }
 
+  toCheckout(){
+    this.router.navigate(['checkout'])
+  }
+
   constructor(private router: Router){
 
   }

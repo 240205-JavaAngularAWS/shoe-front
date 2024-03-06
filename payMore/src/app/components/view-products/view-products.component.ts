@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { IOrderItem } from '../../interfaces/IOrderItem';
 
 
+
+
 @Component({
   selector: 'view-products',
   templateUrl: './view-products.component.html',
@@ -35,6 +37,7 @@ orders: IOrderItem[] = [];
       this.viewProduct.emit(this.productsInputted);
     }
 
+
     addToCart() {
      if(!sessionStorage.getItem("id")) {
       this.router.navigate(['loginUser']);
@@ -62,5 +65,9 @@ orders: IOrderItem[] = [];
        private router: Router,
        private orderService: OrdersService) {
 
-    }
   }
+
+  checkout(){
+    this.router.navigate(['/checkout'])
+  }
+}

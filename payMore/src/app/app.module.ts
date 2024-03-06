@@ -12,7 +12,7 @@ import { SellerLoginComponent } from './components/seller-login/seller-login.com
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
 import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { WriteReviewComponent } from './components/write-review/write-review.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
@@ -29,6 +29,16 @@ import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderComponent } from './components/order/order.component';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
+import { CheckoutService } from './services/checkout.service';
+import { CheckoutComponent } from './components/checkout-form/checkout-form.component';
+
+
+
+
+
+
+
+
 
 
 @NgModule({
@@ -57,17 +67,19 @@ import { CartProductsComponent } from './components/cart-products/cart-products.
     ViewOrdersComponent,
     CartComponent,
     OrderComponent,
-    CartProductsComponent
+    CartProductsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     NgbRatingModule,
-    FormsModule,
+    FormsModule, 
     HttpClientModule
+    
   ],
-  providers: [],
+  providers: [CheckoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
