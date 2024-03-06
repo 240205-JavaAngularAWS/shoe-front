@@ -39,8 +39,8 @@ private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'
   }
 
   // redundant, but allows data to be passed in as a parameter.
-  registerCart(data: IOrder): Observable<IOrder> {
-    return this.http.post<IOrder>(`${this.url}/orders`, data, this.headers)
+  registerCart(data: IOrder): Observable<IOrder[]> {
+    return this.http.post<IOrder[]>(`${this.url}/orders`, data, this.headers)
   }
 
   // redundant, but allows data to be passed in as a parameter.
