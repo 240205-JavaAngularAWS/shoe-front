@@ -7,13 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ReviewsService {
+  private baseUrl = 'http://ec2-54-144-33-180.compute-1.amazonaws.com';
 
   reviews: reviews[] = []
 
 
   getAllReivew(id: number): Observable<reviews[]>{
 
-    return this.http.get<reviews[]>(`http://localhost:8080/reviews/filterBy?productId=${id}`);
+    return this.http.get<reviews[]>(`${this.baseUrl}/reviews/filterBy?productId=${id}`);
 
   }
 
@@ -25,7 +26,7 @@ export class ReviewsService {
       })
     }
     
-    return this.http.post(`http://localhost:8080/reviews`,
+    return this.http.post(`${this.baseUrl}/reviews`,
                   JSON.stringify({rating, content, productId}),
                   headers);
 
