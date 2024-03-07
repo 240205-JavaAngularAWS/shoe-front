@@ -12,16 +12,16 @@ import { IExtendedAddress } from '../interfaces/IExtendedAddress';
   providedIn: 'root'
 })
 export class OrdersService {
-private url = "http://localhost:8080" 
-private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'})}
-public selectedProduct: Products | null = null;
+  private baseUrl = 'http://ec2-54-144-33-180.compute-1.amazonaws.com';
+  private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'})}
+  public selectedProduct: Products | null = null;
 
 
   constructor(private http: HttpClient) {}
 
 
   getOrdersByUserId(userId : number): Observable<IOrder[]>{
-    return this.http.get<IOrder[]>(`${this.url}/orders/filterBy?userId=${userId}&status=COMPLETED`, this.headers)
+    return this.http.get<IOrder[]>(`${this.baseUrl}/orders/filterBy?userId=${userId}&status=COMPLETED`, this.headers)
       // Subscribe on the component side.
   }
 
@@ -29,39 +29,39 @@ public selectedProduct: Products | null = null;
   // redundant, but added due to time crunch
   getCartByUserId(userId: number): Observable<IOrder[]>{
     // will return as list, even though there is only one cart.
-    return this.http.get<IOrder[]>(`${this.url}/orders/filterBy?userId=${userId}&status=PENDING`, this.headers)
+    return this.http.get<IOrder[]>(`${this.baseUrl}/orders/filterBy?userId=${userId}&status=PENDING`, this.headers)
 
   }
 
   getProductInfo(productId: number): Observable<Products>{
-    return this.http.get<Products>(`${this.url}/products/${productId}`, this.headers)
+    return this.http.get<Products>(`${this.baseUrl}/products/${productId}`, this.headers)
 
 
   }
 
   // redundant, but allows data to be passed in as a parameter.
   registerCart(data: IOrder): Observable<IOrder> {
-    return this.http.post<IOrder>(`${this.url}/orders`, data, this.headers)
+    return this.http.post<IOrder>(`${this.baseUrl}/orders`, data, this.headers)
   }
 
   // redundant, but allows data to be passed in as a parameter.
   addItemtoCart(data: IOrderItem): Observable<IOrder> {
-    return this.http.put<IOrder>(`${this.url}/orders`, data, this.headers)
+    return this.http.put<IOrder>(`${this.baseUrl}/orders`, data, this.headers)
 
   }
 
   addShippingAddress(data: IExtendedAddress): Observable<IExtendedAddress>{
-    return this.http.post<IExtendedAddress>(`${this.url}/addresses`, data, this.headers)
+    return this.http.post<IExtendedAddress>(`${this.baseUrl}/addresses`, data, this.headers)
 
   }
 
   addCreditCard(data: ICreditCard): Observable<ICreditCard>{
-    return this.http.post<ICreditCard>(`${this.url}/creditcards`, data, this.headers)
+    return this.http.post<ICreditCard>(`${this.baseUrl}/creditcards`, data, this.headers)
   }
 
 
   submitOrder(orderId: number): Observable<IOrder>{
-    return this.http.post<IOrder>(`${this.url}/orders/submit?orderId=${orderId}`, this.headers)
+    return this.http.post<IOrder>(`${this.baseUrl}/orders/submit?orderId=${orderId}`, this.headers)
 
   }
 
