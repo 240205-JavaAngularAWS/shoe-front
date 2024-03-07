@@ -68,6 +68,7 @@ orders: IOrderItem[] = [];
   }
 
   checkout(){
+    this.orderService.selectedProduct = this.productsInputted;
     this.router.navigate(['/checkout'])
   }
 }
