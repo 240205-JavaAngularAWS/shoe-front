@@ -1,0 +1,97 @@
+/* Overall layout adjustments */
+.container-fluid {
+    padding: 20px;
+}
+
+.checkout-inner {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Typography adjustments for clarity */
+h1, h2, h5, h6 {
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: .5rem;
+    color: #666;
+}
+
+/* Form input styling */
+input.form-control, .custom-control-input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px; /* Adds space between form fields */
+}
+
+input.form-control:focus {
+    border-color: #007bff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+/* Button styling */
+.checkout-btn button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.checkout-btn button:hover {
+    background-color: #0056b3;
+}
+
+/* Custom checkbox */
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #007bff;
+    background-color: #007bff;
+}
+
+.custom-control-label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-lg-4, .col-lg-8, .col-md-6, .col-md-12 {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* Product and order item styling */
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.item-info {
+    margin-right: 15px;
+}
+
+.product-image {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.item-details p {
+    margin: 0;
+    color: #333;
+}
