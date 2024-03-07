@@ -85,6 +85,7 @@ export class CheckoutComponent implements OnInit{
         this.subTotal += product.price;
       }
       this.total = this.subTotal + this.groundShipping;
+      this.total.toFixed(2)
     }
     else {
       this.getProductInfo();
