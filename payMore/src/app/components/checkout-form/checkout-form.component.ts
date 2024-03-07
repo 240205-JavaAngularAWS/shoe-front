@@ -9,6 +9,7 @@ import { IAddress } from '../../interfaces/IAddress';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IExtendedAddress } from '../../interfaces/IExtendedAddress';
 import { Products } from '../../interfaces/products';
+import { IOrder } from '../../interfaces/IOrder';
 
 
 
@@ -20,7 +21,7 @@ import { Products } from '../../interfaces/products';
 export class CheckoutComponent implements OnInit{
   shipToDifferentAddress: boolean = true;
   orderDetails: any = {}; 
-  userId!: number; 
+  userId: number = Number(sessionStorage.getItem("id"));
   SessionStorageLength: any;
 
   creditCards: ICreditCard[] = [];
@@ -31,6 +32,26 @@ export class CheckoutComponent implements OnInit{
   subTotal = 0;
   groundShipping = 5;
   total = 0;
+
+  orderItem: IOrderItem[] = [
+    {
+    orderId: 0,
+    productName: "",
+    imageUrl: "",
+    price: 0,
+    quantity: 0,
+    productId: 0
+    }
+  ];
+  
+  
+  orders: IOrder[] = [
+    {
+    priceTotal: 0,
+    status: "",
+    orderItems: []
+    }
+  ];
 
   constructor(
     private authService: AuthService, //
@@ -60,27 +81,49 @@ export class CheckoutComponent implements OnInit{
       //set the list of products in cart to this.products
       this.products = [this.ordersService.selectedProduct];
       this.ordersService.selectedProduct = null;
+      for(const product of this.products) {
+        this.subTotal += product.price;
+      }
+      this.total = this.subTotal + this.groundShipping;
     }
-    for(const product of this.products) {
-      this.subTotal += product.price;
+    else {
+      this.getProductInfo();
     }
-    this.total = this.subTotal + this.groundShipping;
+    
   }
 
   ngOnInit(): void {
     //throw new Error('Method not implemented.');
   }
 
+  getProductInfo() {
+    this.ordersService.getCartByUserId(this.userId).subscribe((data) => {
+      this.orders = data;
+      this.subTotal = data[0].priceTotal || 0;
+      this.total = this.subTotal + this.groundShipping;
+      this.orders.forEach(order => {
+      
+        order.orderItems.forEach(item => {
+          
+          this.ordersService.getProductInfo(item.productId).pipe(
+          ).subscribe(product => {
+              const pro = {...product,orderId: item.orderId,price: item.price,quantity: item.quantity};
+              this.products.push(pro);
+          });
+        });
+      });
+    });
+  }
+
   addAddresses(event: any): void
   {
     const address: any = this.formGroupPayment.value;
-    const userId: number = parseInt(sessionStorage.getItem("id") || '-1');
     const addressVal: IExtendedAddress = {
       addressText: address.billingAddress,
       city: address.city,
       state: address.state,
       zipCode: address.zipCode,
-      userId:  userId,
+      userId:  this.userId,
       addressType: 'BILLING',
     }
     const value: ICreditCard = {
@@ -91,7 +134,7 @@ export class CheckoutComponent implements OnInit{
       expirationDate: address.expiration,
       address: addressVal,
       user: {
-        id: userId,
+        id: this.userId,
         firstName: '',
         lastName: '',
         userName: '',
@@ -104,7 +147,7 @@ export class CheckoutComponent implements OnInit{
       (response: any) => {
         console.log('Credit Card Info added successfully:', response);
         if(this.shipToDifferentAddress) {
-          const val: IExtendedAddress = {...this.formGroupShipping.value,userId: userId, addressType: 'SHIPPING',sellerId: 5};
+          const val: IExtendedAddress = {...this.formGroupShipping.value,userId: this.userId, addressType: 'SHIPPING',sellerId: 5};
           this.ordersService.addShippingAddress(val).subscribe(
             (response: any) => {
               console.log('Shipping Address Info added successfully:', response);
