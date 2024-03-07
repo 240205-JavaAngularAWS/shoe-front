@@ -6,32 +6,33 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductsService {
+  private baseUrl = 'http://ec2-54-144-33-180.compute-1.amazonaws.com';
   products: Products[] = [];
 
   addProduct(product: Products): Observable<Products> {
     // Assuming the backend expects the product object in the request body and returns the added product
-    return this.http.post<Products>(`http://localhost:8080/products`, product);
+    return this.http.post<Products>(`${this.baseUrl}/products`, product);
   }
 
   getAllProducts(): Observable<Products[]> {
-    return this.http.get<Products[]>(`http://localhost:8080/products/all`);
+    return this.http.get<Products[]>(`${this.baseUrl}/products/all`);
   }
 
   findProductByKeyword(keyword: string): Observable<Products[]> {
     return this.http.get<Products[]>(
-      `http://localhost:8080/products/searchBy?keyword=${keyword}`
+      `${this.baseUrl}/products/searchBy?keyword=${keyword}`
     );
   }
 
   findProductByCategory(category: string): Observable<Products[]> {
     return this.http.get<Products[]>(
-      `http://localhost:8080/products/filterBy?category=${category}`
+      `${this.baseUrl}/products/filterBy?category=${category}`
     );
   }
 
   findProductBySellerId (sellerId:number): Observable<Products[]> {
     return this.http.get<Products[]>(
-      `http://localhost:8080/products/filterBy?sellerId=${sellerId}`
+      `${this.baseUrl}/products/filterBy?sellerId=${sellerId}`
     );
   }
   
