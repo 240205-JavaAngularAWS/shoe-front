@@ -112,6 +112,13 @@ newCart: IOrder = {
   };
 
   checkout(){
+<<<<<<< HEAD
     this.router.navigate(['/checkout']);
   };
 }
+=======
+    this.orderService.selectedProduct = this.productsInputted;
+    this.router.navigate(['/checkout'])
+  }
+}
+>>>>>>> origin/naodBranch

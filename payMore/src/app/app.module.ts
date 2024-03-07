@@ -12,7 +12,7 @@ import { SellerLoginComponent } from './components/seller-login/seller-login.com
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
 import { NavBarSLComponent } from './components/nav-bar-sl/nav-bar-sl.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { WriteReviewComponent } from './components/write-review/write-review.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { UserPortalComponent } from './components/user-portal/user-portal.component';
@@ -76,7 +76,8 @@ import { CheckoutComponent } from './components/checkout-form/checkout-form.comp
     NgbModule,
     NgbRatingModule,
     FormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     
   ],
   providers: [CheckoutService],

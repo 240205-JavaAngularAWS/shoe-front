@@ -14,6 +14,7 @@ import { IExtendedAddress } from '../interfaces/IExtendedAddress';
 export class OrdersService {
 private url = "http://localhost:8080" 
 private headers = { headers: new HttpHeaders({'Content-Type': 'application/json'})}
+public selectedProduct: Products | null = null;
 
 
   constructor(private http: HttpClient) {}

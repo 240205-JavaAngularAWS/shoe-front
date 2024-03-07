@@ -6,4 +6,5 @@ export interface IExtendedAddress {
     zipCode: number,
     userId:  number,
     addressType: string,
+    sellerId?: number
 }
