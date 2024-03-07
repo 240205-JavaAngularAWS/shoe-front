@@ -8,6 +8,7 @@ import { Products } from '../../interfaces/products';
 })
 export class SellerProductComponent {
   @Input() productsInputted: Products = {
+    productName: '',
     price: 0,
     color: '',
     gender: '',

@@ -39,16 +39,6 @@ public selectedProduct: Products | null = null;
 
   }
 
-  createNewOrder(): Observable<IOrderItem[]>{
-    // register 
-    return this.http.post<IOrderItem[]>(`${this.url}/orders`, this.headers);
-  }
-
-  addToOrder(): Observable<IOrderItem[]> {
-    return this.http.put<IOrderItem[]>(`${this.url}/orders`, this.headers)
-  }
-
-
   // redundant, but allows data to be passed in as a parameter.
   registerCart(data: IOrder): Observable<IOrder> {
     return this.http.post<IOrder>(`${this.url}/orders`, data, this.headers)

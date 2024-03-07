@@ -1,7 +1,18 @@
 <div>
-    <p class="card-text">Price: {{this.orders.price}}</p>
-    <p class="card-text">Image: {{this.orders.imageUrl}}</p>
-    <p class="card-text">Product Id: {{this.orders.productId}}</p>
-    <p class="card-text">Quantity: {{this.orders.quantity}}</p>
+
+
+    <div *ngFor="let items of orders[0].orderItems" class="order-item">
+        <div class="item-image" *ngIf="items.imageUrl" >
+            <img [src]="items.imageUrl" alt="Product Image" class="product-image">
+          </div>
+          <div class="item-details">
+            <p>Product Name: {{items.productName}}</p>
+            <p>Product ID: {{items.productId}}</p>
+            <p>Quantity: {{items.quantity}}</p>
+            <p>Price: {{items.price | currency}}</p>
+          </div>
+    </div>
+
+    <p class="card-text">Total Price: {{this.orders[0].priceTotal | currency}}</p>
 </div>
 

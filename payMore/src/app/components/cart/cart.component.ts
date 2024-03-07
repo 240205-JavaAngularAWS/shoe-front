@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Products } from '../../interfaces/products';
 import { ProductsService } from '../../services/products.service';
 import { IOrderItem } from '../../interfaces/IOrderItem';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,16 +13,13 @@ import { IOrderItem } from '../../interfaces/IOrderItem';
 export class CartComponent {
   orders: IOrderItem[] = [];
   SessionStorageLength: number = sessionStorage.length;
-  products: Products[] = [
-    {
-      price: 0,
-      color: "",
-      gender: "",
-      category: "",
-      quantity: 0,
-      seller: {},
-      imageUrl: ''
-    }
-  ];
 
+
+  toCheckout() {
+    this.router.navigate(['checkout']);
+  }
+
+  constructor( private router: Router) {
+
+  }
 }
