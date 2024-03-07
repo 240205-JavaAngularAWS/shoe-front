@@ -11,7 +11,7 @@ import { IRegisterSeller } from '../interfaces/IRegisterSeller';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://ec2-54-144-33-180.compute-1.amazonaws.com';
 
   constructor(private http: HttpClient) {}
 
@@ -43,7 +43,7 @@ export class AuthService {
         'Content-Type': 'application/json',
       })
     }
-        return this.http.post<SUser>(`http://localhost:8080/loginUser`, 
+        return this.http.post<SUser>(`${this.baseUrl}/loginUser`, 
       JSON.stringify({username, password}),
       headers)
   }
@@ -54,7 +54,7 @@ export class AuthService {
         'Content-Type': 'application/json',
       })
     }
-        return this.http.post<SUser>(`http://localhost:8080/loginSeller`, 
+        return this.http.post<SUser>(`${this.baseUrl}/loginSeller`, 
       JSON.stringify({username, password}),
       headers)
   }
