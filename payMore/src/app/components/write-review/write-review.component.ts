@@ -12,15 +12,14 @@ import { ReviewsService } from '../../services/reviews.service';
   styleUrl: './write-review.component.css'
 })
 export class WriteReviewComponent {
-  /*@input()*/ review: string = "";
-  // @Output() reviewChange = new EventEmitter<string>{};
+  review: string = "";
+
   rating: number = 5;
   errorMessageHidden: boolean = true;
 
   postReview(){
     let productId: number = Number(this.activateRoute.snapshot.params['productId']);
-    // this.review
-    // this.reviewChange.emit(this.review)
+
 
     if(!this.review) {
       this.errorMessageHidden = false;
@@ -44,8 +43,6 @@ export class WriteReviewComponent {
   }
 
   ngOnInit(){
-    // let productId: number = Number(this.activateRoute.snapshot.params['productId']);
-    // console.log(productId);
   }
   
 }

@@ -12,10 +12,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './review-list.component.css'
 })
 
-// @NgModule({
-//   imports: [WriteReviewComponent],
-// })
-
 export class ReviewListComponent {
 
 
