@@ -23,6 +23,7 @@ export class CheckoutComponent implements OnInit{
   orderDetails: any = {}; 
   userId: number = Number(sessionStorage.getItem("id"));
   SessionStorageLength: any;
+  orderId: number | undefined = 0;
 
   creditCards: ICreditCard[] = [];
   address: IAddress[] = [];
@@ -85,7 +86,6 @@ export class CheckoutComponent implements OnInit{
         this.subTotal += product.price;
       }
       this.total = this.subTotal + this.groundShipping;
-      this.total.toFixed(2)
     }
     else {
       this.getProductInfo();
@@ -100,6 +100,7 @@ export class CheckoutComponent implements OnInit{
   getProductInfo() {
     this.ordersService.getCartByUserId(this.userId).subscribe((data) => {
       this.orders = data;
+      this.orderId = data[0].id;
       this.subTotal = data[0].priceTotal || 0;
       this.total = this.subTotal + this.groundShipping;
       this.orders.forEach(order => {
@@ -143,6 +144,10 @@ export class CheckoutComponent implements OnInit{
         email: '',
       }
     }
+
+    // const ordId: IOrder = {
+    //   id: 
+    // }
     
     this.ordersService.addCreditCard(value).subscribe(
       (response: any) => {
@@ -161,40 +166,20 @@ export class CheckoutComponent implements OnInit{
       (error: any) => {
         console.error('Error adding Credit Card Info:', error);
       });
-    /*this.ordersService.addShippingAddress(this.creditCards).subscribe()(
-      (response: any) => {
-        console.log('Shipping address added successfully:', response);
-        // Handle success response if required
-      },
-      (error) => {
-        console.error('Error adding shipping address:', error);
-        // Handle error response if required
+
+    
+      if(typeof this.orderId === "number"){
+        this.ordersService.submitOrder(this.orderId).subscribe(
+          (response: IOrder) => {
+            if(response.status == 'COMPLETED'){
+              alert("Success")
+            }
+          },
+
+        )
       }
-    );*/
+    
+    
   }
 }
   
-
-
-
-
-
-// this.checkoutService.submitCheckout(checkoutData)
-//       .subscribe(
-//         (response) => {
-//           console.log('Order submitted successfully:', response);
-         
-//         },
-//         (error) => {
-//           console.error('Error submitting order:', error);
-          
-//         }
-//       );
-// submitCheckoutForm() {
-//   const checkoutData = {
-//     creditCardNumber: this.creditCardNumber,
-//     expirationDate: this.expirationDate,
-//     securityCode: this.securityCode,
-   
-//   };  
-// }
